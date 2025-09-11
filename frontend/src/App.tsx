@@ -3,11 +3,11 @@ import './App.css'
 import Signup from './pages/auth/signup'
 import Login from './pages/auth/login'
 
-
 function App() {
 
   return (
     <>
+
     <BrowserRouter>
       <Routes>
         <Route path='/signup' element={<Signup />} />

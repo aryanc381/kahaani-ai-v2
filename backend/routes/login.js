@@ -13,7 +13,7 @@ const loginBody = zod.object({
 router.post('/userLogin', async (req, res) => {
     try {
         const parsed = loginBody.safeParse(req.body);
-
+        console.log("Searching for email: " + req.body.email);
         if(!parsed.success) {
             const formattedErrors = parsed.error.issues.map(err => ({
                 path: err.path[0],
