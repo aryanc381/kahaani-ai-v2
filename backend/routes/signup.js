@@ -21,8 +21,9 @@ router.post('/userSignUp', async (req, res) => {
             path: err.path[0],
             message: err.message
         }));
+        console.log(formattedErrors)
         return res.status(200).json({
-            msg: "Missing Credentials.",
+            msg: "Invalid / Missing Credentials.",
             errors: formattedErrors
         });
     } else {
@@ -45,7 +46,7 @@ router.post('/userSignUp', async (req, res) => {
         });
         
         return res.status(200).json({
-            msg: "User has been created successfully",
+            msg: "User has been created successfully, navigating to login...",
             firstName: user.firstName,
             lastName: user.lastName,
             email: user.email,

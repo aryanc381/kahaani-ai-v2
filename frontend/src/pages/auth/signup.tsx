@@ -42,7 +42,7 @@ function Signup() {
             let color = '';
             console.log(response);
 
-            if(response.data.msg === "User has been created successfully") {
+            if(response.data.msg === "User has been created successfully, navigating to login...") {
                 color = 'success';
                 setTimeout(() => {
                     navigate('/login');
