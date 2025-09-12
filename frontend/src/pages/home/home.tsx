@@ -1,16 +1,6 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import { ButtonGroup, IconButton, Pagination } from "@chakra-ui/react"
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi"
-import { Avatar, HStack, defineStyle } from "@chakra-ui/react"
-import { Grid } from "@chakra-ui/react"
 import Navbar from "../../navbar/navbar";
 
-const ringCss = defineStyle({
-  outlineWidth: "0.3vw",
-  outlineColor: "colorPalette.500",
-  outlineOffset: "0.3vw",
-  outlineStyle: "dotted",
-})
 
 function Home() {
   return(
