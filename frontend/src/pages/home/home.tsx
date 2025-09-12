@@ -104,7 +104,7 @@ function Experiences() {
             <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Workshops</Text>
         </Box>
       </Flex>
-      <Text textAlign={"center"} mt={{base: "3vw"}}>This website is optimised for iPhone users.</Text>
+      <Text textAlign={"center"} mt={{base: "3vw"}} mb={{base: "3vw"}}>This website is optimised for iPhone users.</Text>
     </Flex>
   )
 }
