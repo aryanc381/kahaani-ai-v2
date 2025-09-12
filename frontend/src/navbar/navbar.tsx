@@ -1,4 +1,4 @@
-import { Avatar, Button, Flex, HStack, Menu, Portal, Text } from "@chakra-ui/react"
+import { Avatar, Flex, HStack, Text } from "@chakra-ui/react"
 
 
 function Navbar() {
