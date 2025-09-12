@@ -39,7 +39,7 @@ function Tours() {
         </Box>
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
             <Image src="./Gradient3.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
-            <Text position={"absolute"} bottom={"16vw"} left={"5vw"} color={"#fff"} textStyle={{base: "2xl"}}>Monuments</Text>
+            <Text position={"absolute"} bottom={"16vw"} left={"5vw"} color={"#ebebebff"} textStyle={{base: "2xl"}}>Monuments</Text>
         </Box>
         
         
