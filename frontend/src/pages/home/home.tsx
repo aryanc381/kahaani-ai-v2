@@ -6,11 +6,33 @@ function Home() {
   return(
     <>
       <Navbar />
+      <CustomerInfo />
       <Tours />
       <Discover />
-      <Discover2 />
+  
     </>
     
+  )
+}
+
+function CustomerInfo() {
+  return(
+    <Flex justifyContent={"center"} gap={{base: "10vw"}} mt={{base: "5vw"}}>
+      <Flex direction={"column"} textAlign={"center"} width={{base: "25vw"}}>
+        <Text textStyle={"5xl"} fontWeight={"600"}>9</Text>
+        <Text textStyle={"md"} fontWeight={"300"}>Friends</Text>
+      </Flex>
+      
+      <Flex direction={"column"} textAlign={"center"} width={{base: "25vw"}}>
+        <Text textStyle={"5xl"} fontWeight={"600"}>16</Text>
+        <Text>Discoveries</Text>
+      </Flex>
+
+      <Flex direction={"column"} textAlign={"center"} width={{base: "25vw"}}>
+        <Text textStyle={"5xl"}fontWeight={"600"}>8</Text>
+        <Text>Cities Visited</Text>
+      </Flex>
+    </Flex>
   )
 }
 
@@ -21,15 +43,15 @@ function Tours() {
       <Flex overflowX="auto" flexWrap="nowrap" gap="0.5vw" css={{ "::-webkit-scrollbar": { display: "none" }, scrollbarWidth:"none", "-webkit-overflow-scrolling": "touch"}} >
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "0.5vw"}}>
           <Image src="./Gradient4.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
-          <Text position={"absolute"} bottom={"16vw"} left={"15vw"} color={"#fff"} textStyle={{base: "2xl"}}>City</Text>
+          <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">City</Text>
         </Box>
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
             <Image src="./Gradient3.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
-            <Text position={"absolute"} bottom={"16vw"} left={"5vw"} color={"#fff"} textStyle={{base: "2xl"}}>Monuments</Text>
+            <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Monuments</Text>
         </Box>
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
-            <Image src="./Gradient3.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
-            <Text position={"absolute"} bottom={"16vw"} left={"5vw"} color={"#ebebebff"} textStyle={{base: "2xl"}}>Monuments</Text>
+            <Image src="./budget.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
+            <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Budget</Text>
         </Box>
         
         
@@ -45,33 +67,17 @@ function Discover() {
       <Flex>
         <Box position={{base: "relative"}} display={{base: "inline-block"}} ml={{base: "0.5vw"}}>
           <Image src="./Gradient5.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
-          <Text position={"absolute"} bottom={"16vw"} left={"12.3vw"} color={"#fff"} textStyle={{base: "2xl"}}>Shops</Text>
+          <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Shops</Text>
         </Box>
         <Box position={{base: "relative"}} display={{base: "inline-block"}} ml={{base: "3vw"}}>
             <Image src="./Gradient6.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
-            <Text position={"absolute"} bottom={"16vw"} left={"13.3vw"} color={"#fff"} textStyle={{base: "2xl"}}>Food</Text>
+            <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Food</Text>
         </Box>
       </Flex>
     </Flex>
   )
 }
 
-function Discover2() {
-  return (
-    <Flex  flexDirection={"column"} mt={{base: "-4vw"}} mr={{base: "5.05vw"}} ml={{base: "5.05vw"}} fontWeight={{base: "500"}} letterSpacing={{base: "-0.2vw"}}>
-      <Text textStyle={{base: "4xl"}} mt={{base: "9vw"}} letterSpacing={{base: "-0.3vw"}} mb={{base: "1vw"}}>Discover</Text>
-      <Flex>
-        <Box position={{base: "relative"}} display={{base: "inline-block"}} ml={{base: "0.5vw"}}>
-          <Image src="./Gradient5.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
-          <Text position={"absolute"} bottom={"16vw"} left={"12.3vw"} color={"#fff"} textStyle={{base: "2xl"}}>Shops</Text>
-        </Box>
-        <Box position={{base: "relative"}} display={{base: "inline-block"}} ml={{base: "3vw"}}>
-            <Image src="./Gradient6.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
-            <Text position={"absolute"} bottom={"16vw"} left={"13.3vw"} color={"#fff"} textStyle={{base: "2xl"}}>Food</Text>
-        </Box>
-      </Flex>
-    </Flex>
-  )
-}
+
 
 export default Home;
