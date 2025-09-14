@@ -4,9 +4,6 @@ import {
   Button,
   CloseButton,
   Drawer,
-  For,
-  HStack,
-  Kbd,
   Portal,
 } from "@chakra-ui/react"
 import { useState } from 'react'
