@@ -30,8 +30,8 @@ function CityDescription() {
     )
 }
 function Maharashtra() {
-  const [open, setOpen] = useState(false)
-  const [selectedCity, setSelectedCity] = useState<string | null>(null)
+  const [open, setOpen] = useState(false);
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);
 
   const CityMenus: Record<string, any[]> = {
     "mumbai": [

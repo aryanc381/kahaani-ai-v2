@@ -9,7 +9,7 @@ function Navbar() {
       <Flex justifyContent={"space-between"}>
         
         <Image src="./logo.png" width={{base: "15vw"}} onClick={() => {navigate('/')}}/>
-        <Text textAlign={"center"} textStyle={{base: "2xl"}} mt={{base: "4.5vw", md: "0.5vw"}} letterSpacing={{base: "-0.3vw"}} width={{base: "37vw"}}>Hello, Aryan.</Text>
+        <Text textAlign={"center"} textStyle={{base: "2xl"}} mt={{base: "4.5vw", md: "0.5vw"}} letterSpacing={{base: "-0.3vw"}} width={{base: "37vw"}}>Hello, Aditya.</Text>
         <HStack gap="4" maxWidth={{base: "15vw"}}>
       <Avatar.Root colorPalette="green">
         <Avatar.Fallback />
