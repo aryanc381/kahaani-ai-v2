@@ -16,7 +16,10 @@ function Sidebar() {
     color={textColor}
     backgroundColor="rgba(255, 255, 255, 0.2)"
     borderRadius="4vw"
-    p="3vw"
+    pt="3vw"
+    pb="1.5vw"
+    pl="3vw"
+    pr="2.5vw"
     gap="7vw"
     zIndex="1000"
     backdropFilter="blur(2vw) saturate(200%) contrast(120%)"
@@ -50,7 +53,7 @@ function Sidebar() {
       </Flex>
       <Text>SpeakAI</Text>
     </Flex>
-    <Flex direction="column" alignItems="center" width="12vw" mr={"2vw"}  onClick={() => {navigate('/profile')}}>
+    <Flex direction="column" alignItems="center" width="12vw" mr={"2vw"}  onClick={() => {navigate('/profile'); <style></style>}}>
       <VscAccount size="7vw" />
       <Text>Profile</Text>
     </Flex>
