@@ -41,7 +41,7 @@ function SiriWaveComponent() {
         style: "ios9", // "ios" or "ios9"
         autostart: true,
         speed: 0.1,
-        amplitude: 1
+        amplitude: 3
       });
     }
 
