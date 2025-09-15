@@ -35,7 +35,7 @@ function Sidebar() {
   />
 
   {/* Sidebar items */}
-  <Flex direction="column" alignItems="center" width="12vw">
+  <Flex direction="column" alignItems="center" width="12vw" ml={"1vw"}>
     <VscAccount size="7vw" />
     <Text>Profile</Text>
   </Flex>
@@ -49,7 +49,7 @@ function Sidebar() {
     </Flex>
     <Text>SpeakAI</Text>
   </Flex>
-  <Flex direction="column" alignItems="center" width="12vw">
+  <Flex direction="column" alignItems="center" width="12vw" mr={"2vw"}>
     <VscSettings size="7vw" />
     <Text>Settings</Text>
   </Flex>
