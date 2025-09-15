@@ -85,8 +85,8 @@ function Details() {
             <Heading size="md">Customer Information</Heading>
             </Card.Header>
             <Card.Body color="fg.muted">
-                <Text>Email : <span style={{color: textColor, padding:"1vw", borderRadius: "1vw"}}>chauhanaryan381@gmail.com</span></Text>
-                <Text>Phone : <span style={{color: textColor, padding:"1vw", borderRadius: "1vw"}}>9094122622</span></Text>
+                <Text>Email &nbsp;&nbsp;&nbsp;: <span style={{color: textColor, padding:"1vw", borderRadius: "1vw"}}>chauhanaryan381@gmail.com</span></Text>
+                <Text>Phone &nbsp;: <span style={{color: textColor, padding:"1vw", borderRadius: "1vw"}}>9094122622</span></Text>
             </Card.Body>
       </Card.Root>
       </Flex>

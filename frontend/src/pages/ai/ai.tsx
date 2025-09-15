@@ -2,30 +2,61 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../navbar/navbar"
 import Sidebar from "../../sidebar/sidebar"
 import { Button, Flex, Text } from "@chakra-ui/react";
+import SiriWave from "siriwave";
+import { useEffect, useRef, useState } from "react";
+import { VscTelescope } from "react-icons/vsc";
 
 function Ai() {
   return (
     <div>
         <Navbar />
         <Sidebar />
-        <AI />
+        <Combination />
     </div>
   )
 }
 
-function AI() {
-    const navigate = useNavigate();
-      return (
-        <>
-          <Flex justifyContent={"center"} mt={"60%"} fontSize={"2xl"} gap={"3vw"}>
-            <Text>AI Coming Soon</Text>
-            <Button onClick={() => {navigate(-1)}}>Go Back</Button>  
-          </Flex>
-          <Sidebar />
-          
-        </>
-        
-      )
+function Combination() {
+  return(
+    <>
+    <Flex direction={"column"} mt={"50%"} justifyContent={"center"} alignItems={"center"}>
+      <Text fontSize={"6vw"} fontWeight={"100"}>What can I do for you today?</Text>
+      <SiriWaveComponent />
+      <Button variant={"subtle"} borderRadius={"10vw"}>Talk with Vaishvi<VscTelescope /></Button>
+    </Flex>
+    
+    </>
+  )
+}
+function SiriWaveComponent() {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const siriWaveRef = useRef<SiriWave | null>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      siriWaveRef.current = new SiriWave({
+        container: containerRef.current,
+        width: 400,
+        height: 100,
+        style: "ios9", // "ios" or "ios9"
+        autostart: true,
+        speed: 0.1,
+        amplitude: 1
+      });
+    }
+
+    return () => {
+      siriWaveRef.current?.dispose();
+    };
+  }, []);
+
+  return (
+    <Flex
+      ref={containerRef}
+      style={{ width: "full", marginTop: "0vw", marginBottom: "0vw" }}
+    />
+
+  );
 }
 
-export default Ai
+export default Ai;
