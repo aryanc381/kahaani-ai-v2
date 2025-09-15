@@ -54,7 +54,7 @@ function SiriWaveComponent() {
       siriWaveRef.current = new SiriWave({
         container: containerRef.current,
         width: 350, // responsive width
-        height: 200,
+        height: 150,
         style: "ios9",
         autostart: true,
         speed: 0.1,

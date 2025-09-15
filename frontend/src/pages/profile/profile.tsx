@@ -3,8 +3,9 @@ import { Avatar } from "@chakra-ui/react"
 import Navbar from '../../navbar/navbar'
 import Sidebar from '../../sidebar/sidebar'
 import { useState } from 'react'
-import { VscBroadcast, VscColorMode, VscSettingsGear } from 'react-icons/vsc'
+import { VscArrowLeft, VscBroadcast, VscSettingsGear, VscVr } from 'react-icons/vsc'
 import { useColorMode, useColorModeValue } from '../../components/ui/color-mode'
+import { useNavigate } from 'react-router-dom'
 
 function Profile() {
   return (
@@ -271,6 +272,7 @@ function MyTrips() {
 
 function Settings() {
     const { colorMode, toggleColorMode } = useColorMode();
+    const navigate = useNavigate();
     return (
         <Flex justify="center">
         <Card.Root
@@ -281,23 +283,28 @@ function Settings() {
             mb="0vw"
             borderRadius="3vw"
         >
-            <Card.Body color="fg.muted">
-            <Flex justify="center" align="center" gap="8vw">
+            <Card.Body color="fg.muted" mt={"1vw"}>
+            <Flex justify="center" align="center" gap="7vw">
                 <Flex direction={"column"} alignItems={"center"} width={"15vw"}>
-                    <VscSettingsGear size="10vw" />
+                    <VscSettingsGear size="8vw" />
                     <Text mt={"0.7vw"}>Settings</Text>
                 </Flex>
                 
                 <Flex direction={"column"} alignItems={"center"} width={"15vw"}>
-                    <VscBroadcast size="10vw" />
+                    <VscBroadcast size="8vw" />
                     <Text mt={"1vw"}>Support</Text>
                 </Flex>
 
                 <Flex direction={"column"} alignItems={"center"} onClick={toggleColorMode} width={"15vw"}>
-                    <VscColorMode size="10vw" />
-                        <Text mt={"0.11vw"}>
+                    <VscVr size="8vw" />
+                        <Text mt={"1vw"}>
                             {colorMode === "light" ? "Dark" : "Light"}
                         </Text>
+                </Flex>
+                
+                <Flex direction={"column"} alignItems={"center"} width={"15vw"} onClick={() => {navigate('/login')}}>
+                    <VscArrowLeft size="8vw" />
+                    <Text mt={"1vw"} >Logout</Text>
                 </Flex>
             </Flex>
             </Card.Body>
