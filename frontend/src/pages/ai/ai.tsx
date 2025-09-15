@@ -17,17 +17,34 @@ function Ai() {
 }
 
 function Combination() {
-  return(
-    <Flex>
-    <Flex direction={"column"} mt={"50%"} justifyContent={"center"} alignItems={"center"} textAlign={"center"}>
-      <Text fontSize={"6vw"} fontWeight={"100"} textAlign={"center"} ml={"6vw"}>What can I do for you today?</Text>
-      <SiriWaveComponent />
-      <Button variant={"subtle"} borderRadius={"10vw"} ml={"3vw"}>Talk with Vaishvi<VscTelescope /></Button>
+  return (
+    <Flex w="100vw" h="60vh" justify="center" align="center" position="relative">
+      <Flex
+        direction="column"
+        align="center"
+        justify="center"
+        position="absolute"
+        top="50%"
+        left="50%"
+        transform="translate(-50%, -50%)"
+        px="4vw"
+        textAlign="center"
+        gap="6vw" // vertical spacing between items
+      >
+        <Text fontSize="6vw" fontWeight="100" width={"80vw"}>
+          What can I do for you today?
+        </Text>
+
+        <SiriWaveComponent />
+
+        <Button variant="subtle" borderRadius="10vw" px="6vw" py="4">
+          Talk with Vaishvi <VscTelescope />
+        </Button>
+      </Flex>
     </Flex>
-    
-    </Flex>
-  )
+  );
 }
+
 function SiriWaveComponent() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const siriWaveRef = useRef<SiriWave | null>(null);
@@ -36,12 +53,12 @@ function SiriWaveComponent() {
     if (containerRef.current) {
       siriWaveRef.current = new SiriWave({
         container: containerRef.current,
-        width: 400,
-        height: 100,
-        style: "ios9", // "ios" or "ios9"
+        width: 350, // responsive width
+        height: 200,
+        style: "ios9",
         autostart: true,
         speed: 0.1,
-        amplitude: 3
+        amplitude: 2, // subtle idle motion
       });
     }
 
@@ -53,9 +70,12 @@ function SiriWaveComponent() {
   return (
     <Flex
       ref={containerRef}
-      style={{maxWidth: "90vw", width: "full", marginTop: "0vw", marginBottom: "0vw" }}
+      w="100%"
+      maxW="90vw" // ensures it stays within screen
+      h="20vw"
+      justify="center"
+      align="center"
     />
-
   );
 }
 
