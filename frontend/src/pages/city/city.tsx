@@ -158,7 +158,7 @@ function Maharashtra() {
                 <Button variant="outline" onClick={() => setOpen(false)}>Close</Button>
                 <Flex gap={2}>
                   <Button variant="outline">Add to Cart</Button>
-                  <Button colorScheme="blue">Purchase Tour</Button>
+                  <Button colorScheme="blue"><a href="https://elevenlabs.io/app/talk-to?agent_id=agent_7801k569312hfzcb6gtdx8a9a0nq">Purchase Tour</a></Button>
                 </Flex>
               </Drawer.Footer>
 
