@@ -40,12 +40,11 @@ function FriendReq() {
                     <Avatar.Image src="https://cdn.myanimelist.net/r/84x124/images/characters/9/105421.webp?s=269ff1b2bb9abe3ac1bc443d3a76e863" />
                 </Avatar.Root>
                 <Avatar.Root variant="solid">
-                    <Avatar.Fallback>+3</Avatar.Fallback>
+                    <Avatar.Fallback>+1</Avatar.Fallback>
                 </Avatar.Root>
                 </AvatarGroup>
                 <Button>Open Requests</Button>
           </Flex>
-          
         </Card.Body>
       </Card.Root>
     </Stack> 
