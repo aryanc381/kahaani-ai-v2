@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router-dom";
+
 import Navbar from "../../navbar/navbar"
 import Sidebar from "../../sidebar/sidebar"
 import { Button, Flex, Text } from "@chakra-ui/react";
 import SiriWave from "siriwave";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { VscTelescope } from "react-icons/vsc";
 
 function Ai() {
@@ -18,14 +18,14 @@ function Ai() {
 
 function Combination() {
   return(
-    <>
+    <Flex>
     <Flex direction={"column"} mt={"50%"} justifyContent={"center"} alignItems={"center"}>
       <Text fontSize={"6vw"} fontWeight={"100"}>What can I do for you today?</Text>
       <SiriWaveComponent />
       <Button variant={"subtle"} borderRadius={"10vw"}>Talk with Vaishvi<VscTelescope /></Button>
     </Flex>
     
-    </>
+    </Flex>
   )
 }
 function SiriWaveComponent() {
