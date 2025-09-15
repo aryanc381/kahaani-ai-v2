@@ -1,12 +1,9 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { VscAccount, VscChip, VscCompass, VscLocation, VscSettings } from "react-icons/vsc";
+import { VscAccount, VscChip, VscLocation, VscSettings } from "react-icons/vsc";
 import { useColorModeValue } from "../components/ui/color-mode";
 
 function Sidebar() {
-  const bgColor = useColorModeValue(
-    "rgba(255, 255, 255, 0.25)", // light mode glass
-    "rgba(46, 46, 46, 0.4)"      // dark mode glass
-  );
+
   const textColor = useColorModeValue("gray.900", "gray.100");
 
   return (
