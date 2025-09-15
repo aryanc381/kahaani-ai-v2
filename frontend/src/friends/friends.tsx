@@ -9,7 +9,6 @@ function Friends() {
         <Sidebar />
         <Search />
         <FriendReq />
-        
     </>
   )
 }

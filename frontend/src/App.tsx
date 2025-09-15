@@ -7,6 +7,7 @@ import City from './pages/city/city'
 import Monuments from './pages/monuments/monuments'
 import Gmap from './pages/gmap/gmap'
 import Friends from './friends/friends'
+import Profile from './pages/profile/profile'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/monuments' element={<Monuments />} />
         <Route path='/map' element={<Gmap />} />
         <Route path='/friends' element={<Friends />} />
+        <Route path='/profile' element={<Profile />} />
       </Routes>
     </BrowserRouter>
     </>
