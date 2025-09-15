@@ -7,8 +7,9 @@ function Friends() {
     <>
         <Navbar />
         <Sidebar />
-        <FriendReq />
         <Search />
+        <FriendReq />
+        
     </>
   )
 }
