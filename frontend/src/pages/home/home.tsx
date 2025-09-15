@@ -2,8 +2,7 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import Navbar from "../../navbar/navbar";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../sidebar/sidebar";
-import SiriWave from "siriwave";
-import { useEffect, useRef, useState } from "react";
+
 
 
 function Home() {
@@ -12,7 +11,7 @@ function Home() {
       <Navbar />
       
       <CustomerInfo />
-      <Combination />
+ 
       <Tours />
       <Discover />
       <Experiences />
@@ -22,47 +21,7 @@ function Home() {
   )
 }
 
-function Combination() {
-  return(
-    <>
-    <Flex direction={"column"} mt={"10vw"} justifyContent={"center"} alignItems={"center"}>
-      <Text fontSize={"6vw"} fontWeight={"100"}>What can I do for you today?</Text>
-      <SiriWaveComponent />
-    </Flex>
-    
-    </>
-  )
-}
-function SiriWaveComponent() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const siriWaveRef = useRef<SiriWave | null>(null);
 
-  useEffect(() => {
-    if (containerRef.current) {
-      siriWaveRef.current = new SiriWave({
-        container: containerRef.current,
-        width: 400,
-        height: 100,
-        style: "ios9", // "ios" or "ios9"
-        autostart: true,
-        speed: 0.1,
-        amplitude: 1
-      });
-    }
-
-    return () => {
-      siriWaveRef.current?.dispose();
-    };
-  }, []);
-
-  return (
-    <Flex
-      ref={containerRef}
-      style={{ width: "full", marginTop: "0vw", marginBottom: "0vw" }}
-    />
-
-  );
-}
 
 function CustomerInfo() {
   return(
@@ -111,7 +70,7 @@ function Tours() {
         
       </Flex>
     </Flex>
-  )
+  );
 }
 
 function Discover() {
