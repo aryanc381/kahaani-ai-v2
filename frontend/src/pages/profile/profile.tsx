@@ -283,19 +283,19 @@ function Settings() {
         >
             <Card.Body color="fg.muted">
             <Flex justify="center" align="center" gap="8vw">
-                <Flex direction={"column"} alignItems={"center"}>
+                <Flex direction={"column"} alignItems={"center"} width={"15vw"}>
                     <VscSettingsGear size="10vw" />
-                    <Text>Settings</Text>
+                    <Text mt={"0.7vw"}>Settings</Text>
                 </Flex>
                 
-                <Flex direction={"column"} alignItems={"center"}>
+                <Flex direction={"column"} alignItems={"center"} width={"15vw"}>
                     <VscBroadcast size="10vw" />
-                    <Text>Support</Text>
+                    <Text mt={"1vw"}>Support</Text>
                 </Flex>
 
-                <Flex direction={"column"} alignItems={"center"} onClick={toggleColorMode}>
+                <Flex direction={"column"} alignItems={"center"} onClick={toggleColorMode} width={"15vw"}>
                     <VscColorMode size="10vw" />
-                        <Text mt={2}>
+                        <Text mt={"0.11vw"}>
                             {colorMode === "light" ? "Dark" : "Light"}
                         </Text>
                 </Flex>
