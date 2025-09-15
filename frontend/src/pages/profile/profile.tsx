@@ -3,7 +3,7 @@ import { Avatar } from "@chakra-ui/react"
 import Navbar from '../../navbar/navbar'
 import Sidebar from '../../sidebar/sidebar'
 import { useState } from 'react'
-import { VscAccount, VscBroadcast, VscColorMode, VscSettings, VscSettingsGear } from 'react-icons/vsc'
+import { VscBroadcast, VscColorMode, VscSettingsGear } from 'react-icons/vsc'
 import { useColorMode, useColorModeValue } from '../../components/ui/color-mode'
 
 function Profile() {
