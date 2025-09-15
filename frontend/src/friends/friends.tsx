@@ -1,7 +1,6 @@
 import Navbar from "../navbar/navbar"
 import Sidebar from "../sidebar/sidebar"
 import { Avatar, AvatarGroup, Button, Card, Flex, Group, Heading, Input, Stack, Text } from "@chakra-ui/react"
-import { Breadcrumb } from "@chakra-ui/react"
 
 function Friends() {
   return (
