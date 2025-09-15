@@ -19,10 +19,10 @@ function Ai() {
 function Combination() {
   return(
     <Flex>
-    <Flex direction={"column"} mt={"50%"} justifyContent={"center"} alignItems={"center"}>
-      <Text fontSize={"6vw"} fontWeight={"100"}>What can I do for you today?</Text>
+    <Flex direction={"column"} mt={"50%"} justifyContent={"center"} alignItems={"center"} textAlign={"center"}>
+      <Text fontSize={"6vw"} fontWeight={"100"} textAlign={"center"} ml={"6vw"}>What can I do for you today?</Text>
       <SiriWaveComponent />
-      <Button variant={"subtle"} borderRadius={"10vw"}>Talk with Vaishvi<VscTelescope /></Button>
+      <Button variant={"subtle"} borderRadius={"10vw"} ml={"3vw"}>Talk with Vaishvi<VscTelescope /></Button>
     </Flex>
     
     </Flex>
@@ -53,7 +53,7 @@ function SiriWaveComponent() {
   return (
     <Flex
       ref={containerRef}
-      style={{ width: "full", marginTop: "0vw", marginBottom: "0vw" }}
+      style={{maxWidth: "90vw", width: "full", marginTop: "0vw", marginBottom: "0vw" }}
     />
 
   );
