@@ -1,6 +1,7 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import Navbar from "../../navbar/navbar";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "../../sidebar/sidebar";
 
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
       <Tours />
       <Discover />
       <Experiences />
+      <Sidebar />
     </>
     
   )

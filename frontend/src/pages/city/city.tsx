@@ -7,6 +7,7 @@ import {
   Portal,
 } from "@chakra-ui/react"
 import { useState } from 'react'
+import Sidebar from '../../sidebar/sidebar'
 
 function City() {
   return (
@@ -17,6 +18,7 @@ function City() {
         <Rajasthan />
         <Karnataka />
         <Button1 />
+        <Sidebar />
     </div>
   )
 }
@@ -58,7 +60,7 @@ function Maharashtra() {
     "nashik": [
       "Nashik Tour",
       "City of grapes and temples",
-      ["Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves"],
+      ["Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves", "Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves", "Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves", "Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves", "Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves"],
       "Rs. 550",
       "8hrs"
     ],
@@ -122,7 +124,7 @@ function Maharashtra() {
                         <Text fontSize="lg" fontWeight="semibold">Checkpoints</Text>
                       </Card.Header>
                       <Card.Body>
-                        <Flex direction="column" gap={2}>
+                        <Flex direction="column" gap={2} overflowY={"auto"}>
                           {CityMenus[selectedCity][2].map((place: string, idx: number) => (
                             <Box key={idx} p={2} borderRadius="md" _hover={{ bg: "chakra-subtle-bg" }}>
                               <Text>{place}</Text>
