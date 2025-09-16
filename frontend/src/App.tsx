@@ -9,6 +9,7 @@ import Gmap from './pages/gmap/gmap'
 import Friends from './friends/friends'
 import Profile from './pages/profile/profile'
 import Ai from './pages/ai/ai'
+import Showcase from './pages/showcase/showcase'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/friends' element={<Friends />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/ai' element={<Ai />} />
+        <Route path='/' element={<Showcase />} />
       </Routes>
     </BrowserRouter>
     </>
