@@ -6,6 +6,8 @@ import { useState } from 'react'
 import { VscArrowLeft, VscBroadcast, VscSettingsGear, VscVr } from 'react-icons/vsc'
 import { useColorMode, useColorModeValue } from '../../components/ui/color-mode'
 import { useNavigate } from 'react-router-dom'
+import { CustomerInfo } from '../home/home'
+
 
 function Profile() {
   return (
@@ -53,22 +55,7 @@ function Information() {
           </Box>
         </Flex>
 
-        <Flex justifyContent={"center"} gap={{base: "9vw"}} mt={{base: "7vw"}}>
-      <Flex direction={"column"} textAlign={"center"} width={{base: "25vw"}}>
-        <Text textStyle={"5xl"} fontWeight={"600"}>9</Text>
-        <Text textStyle={"md"} fontWeight={"300"}>Friends</Text>
-      </Flex>
-      
-      <Flex direction={"column"} textAlign={"center"} width={{base: "25vw"}}>
-        <Text textStyle={"5xl"} fontWeight={"600"}>16</Text>
-        <Text>Discoveries</Text>
-      </Flex>
-
-      <Flex direction={"column"} textAlign={"center"} width={{base: "25vw"}}>
-        <Text textStyle={"5xl"}fontWeight={"600"}>8</Text>
-        <Text>Cities</Text>
-      </Flex>
-    </Flex>
+        <CustomerInfo />
       </Card.Root>
     </Flex>
     
@@ -286,8 +273,32 @@ function Settings() {
             <Card.Body color="fg.muted" mt={"1vw"}>
             <Flex justify="center" align="center" gap="7vw">
                 <Flex direction={"column"} alignItems={"center"} width={"15vw"}>
+                    <Drawer.Root size={"full"}>
+                      <Drawer.Trigger asChild>
+                        <Flex direction={"column"} alignItems={"center"} width={"15vw"}>
                     <VscSettingsGear size="8vw" />
-                    <Text mt={"0.7vw"}>Settings</Text>
+                    <Text mt={"1vw"}>Settings</Text>
+                </Flex>
+                    </Drawer.Trigger>
+                    <Portal>
+                      <Drawer.Backdrop />
+                      <Drawer.Positioner>
+                        <Drawer.Content>
+                          <Drawer.Context>
+                            {(store) => (
+                              <Drawer.Body pt="6vw" spaceY="3vw">
+                                
+                                <Button variant={"solid"} onClick={() => store.setOpen(false)}>Close</Button>
+                              </Drawer.Body>
+                            )}
+                          </Drawer.Context>
+                          <Drawer.CloseTrigger asChild>
+                            <CloseButton size="sm" />
+                          </Drawer.CloseTrigger>
+                        </Drawer.Content>
+                      </Drawer.Positioner>
+                    </Portal>
+                  </Drawer.Root>
                 </Flex>
                 
                 <Flex direction={"column"} alignItems={"center"} width={"15vw"}>
