@@ -86,7 +86,7 @@ function Discover() {
             <Image mt={"0.1vw"} src="./taj-mahal.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
             <Text position="relative" color="#fff" mt={"0.5vw"} textAlign={"center"} textStyle="xl" ml={"1vw"}>Taj Mahal</Text>
         </Box>
-        <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "4.5vw"}}>
+        <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "5.5vw"}}>
             <Image src="./red-fort.png" mt={"-1.5vw"} width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
             <Text position="relative" color="#fff" mt={"1.5vw"} textAlign={"center"} textStyle="xl" ml={"1vw"}>Red Fort</Text>
         </Box>
