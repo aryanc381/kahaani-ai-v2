@@ -80,15 +80,15 @@ function Discover() {
       <Flex overflowX="auto" flexWrap="nowrap" gap="0.5vw" ml={{base: "-2vw"}} css={{ "::-webkit-scrollbar": { display: "none" }, scrollbarWidth:"none", "-webkit-overflow-scrolling": "touch"}} >
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "2.5vw"}}>
           <Image src="./wada.png" mt={"2.4vw"} width={{base: "40vw"}} borderRadius={{base: "10%"}} />
-          <Text position="relative" color="#fff" mt={"-2vw"} textAlign={"center"} textStyle="xl" ml={"1vw"}>Shaniwar Wada</Text>
+          <Text position="relative" mt={"-2vw"} textAlign={"center"} textStyle="xl" ml={"1vw"}>Shaniwar Wada</Text>
         </Box>
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3.5vw"}}>
             <Image mt={"0.1vw"} src="./taj-mahal.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
-            <Text position="relative" color="#fff" mt={"0.5vw"} textAlign={"center"} textStyle="xl" ml={"1vw"}>Taj Mahal</Text>
+            <Text position="relative"  mt={"0.5vw"} textAlign={"center"} textStyle="xl" ml={"1vw"}>Taj Mahal</Text>
         </Box>
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "5.5vw"}}>
             <Image src="./red-fort.png" mt={"-1.5vw"} width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
-            <Text position="relative" color="#fff" mt={"1.5vw"} textAlign={"center"} textStyle="xl" ml={"1vw"}>Red Fort</Text>
+            <Text position="relative"  mt={"1.5vw"} textAlign={"center"} textStyle="xl" ml={"1vw"}>Red Fort</Text>
         </Box>
       </Flex>
     </Flex>
@@ -98,7 +98,7 @@ function Discover() {
 function Experiences() {
   return (
     <Flex  flexDirection={"column"} mt={{base: "-4vw"}} mr={{base: "5.05vw"}} ml={{base: "5.05vw"}} fontWeight={{base: "500"}} letterSpacing={{base: "-0.2vw"}}>
-      <Text textStyle={{base: "4xl"}} mt={{base: "9vw"}} letterSpacing={{base: "-0.3vw"}} mb={{base: "1vw"}}>Experiences</Text>
+      <Text textStyle={{base: "4xl"}} mt={{base: "9vw"}} letterSpacing={{base: "-0.3vw"}} mb={{base: "1vw"}}>Today's Hits</Text>
       <Flex overflowX="auto" flexWrap="nowrap" gap="0.5vw" ml={{base: "-2vw"}} css={{ "::-webkit-scrollbar": { display: "none" }, scrollbarWidth:"none", "-webkit-overflow-scrolling": "touch"}} >
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "2.5vw"}}>
           <Image src="./Gradient5.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
