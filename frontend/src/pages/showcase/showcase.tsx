@@ -1,11 +1,11 @@
 import { Globe } from '@/components/ui/globe';
-import React from 'react';
-
-
+import { Flex } from '@chakra-ui/react';
 
 function Showcase() {
   return (
-    <div><Globe /></div>
+    <Flex width={"10vw"}>
+        <Globe />
+    </Flex>
   )
 }
 
