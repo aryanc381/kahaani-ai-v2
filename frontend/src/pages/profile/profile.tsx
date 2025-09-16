@@ -1,4 +1,4 @@
-import { Box, Button, Card, CloseButton, defineStyle, Drawer, Flex, Heading, Image, Portal, Text } from '@chakra-ui/react'
+import { Badge, Box, Button, Card, CloseButton, defineStyle, Drawer, Flex, Heading, Image, Portal, Text } from '@chakra-ui/react'
 import { Avatar } from "@chakra-ui/react"
 import Navbar from '../../navbar/navbar'
 import Sidebar from '../../sidebar/sidebar'
@@ -48,7 +48,10 @@ function Information() {
             <Avatar.Image src="./pfp.jpg" />
           </Avatar.Root>
           <Box>
-            <Heading size={{ base: "lg", md: "xl" }}>Aryan Chauhan</Heading>
+            <Flex>
+              <Heading size={{ base: "lg", md: "xl" }}>Aryan Chauhan</Heading><Badge ml={"2vw"} colorPalette={"green"}>premium</Badge>
+            </Flex>
+            
             <Flex fontSize="sm" color="gray.500" mt={"1vw"}>
                 <Text>I travelled the world at the age of 21.</Text>
             </Flex>
@@ -303,7 +306,7 @@ function Settings() {
                 
                 <Flex direction={"column"} alignItems={"center"} width={"15vw"}>
                     <VscBroadcast size="8vw" />
-                    <Text mt={"1vw"}>Support</Text>
+                    <Text mt={"1vw"}>Plans</Text>
                 </Flex>
 
                 <Flex direction={"column"} alignItems={"center"} onClick={toggleColorMode} width={"15vw"}>
