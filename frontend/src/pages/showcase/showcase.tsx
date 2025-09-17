@@ -1,4 +1,3 @@
-import { Globe } from '@/components/ui/globe';
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { ProgressiveBlur } from "../../components/ui/progressive-blur";
 import { useColorMode, useColorModeValue } from '@/components/ui/color-mode';
