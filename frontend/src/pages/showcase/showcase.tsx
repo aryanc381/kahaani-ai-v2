@@ -1,14 +1,15 @@
 import { Globe } from '@/components/ui/globe';
 import { Button, Flex, Text } from '@chakra-ui/react';
 import { ProgressiveBlur } from "../../components/ui/progressive-blur";
-import { Iphone15Pro } from "../../components/ui/iphone-15-pro";
  
 function Showcase() {
   return (
     <Flex direction={"column"}>
         <Globe />
-        <Iphone15ProDemo />
+     
         <Navbar />
+        <ProgressiveBlur height="10%" position="bottom" />
+        
        
     </Flex>
   )
@@ -19,9 +20,9 @@ function Showcase() {
 function Navbar() {
   return (
     <Flex>
-      <ProgressiveBlur height="20%" position="top" />
+      <ProgressiveBlur height="30%" position="top" />
 
-      <Flex width="full" position="fixed" zIndex={100} top={0} px={{ base: "3vw", md: "2vw" }} py={{ base: "4vw", md: "1.5vw" }}  justifyContent="space-between" alignItems="center">
+      <Flex width="full" position="fixed" zIndex={100} top={0} px={{ base: "5vw", md: "2vw" }} py={{ base: "4vw", md: "1.5vw" }}  justifyContent="space-between" alignItems="center">
         <Text letterSpacing={{ base: "-0.2vw" }} fontSize={{ base: "6vw", md: "2vw" }}>
           KahaaniAI
         </Text>
@@ -35,12 +36,5 @@ function Navbar() {
   );
 }
 
-function Iphone15ProDemo() {
-  return (
-    <Flex position={"relative"} mt={"40vw"}>
-      <Iphone15Pro className="size-[100vw]" src='./iphone15.jpg' />
-    </Flex>
-  );
-}
 
 export default Showcase
