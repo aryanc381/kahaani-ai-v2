@@ -26,8 +26,14 @@ const kahUsers = mongoose.Schema({
     password: {
         type: String,
         required: true,
+    },
+    status: {
+        type: String
+    },
+    pfp: {
+        type: String
     }
-});
+}); 
 
 const users = mongoose.model('users', kahUsers);
 

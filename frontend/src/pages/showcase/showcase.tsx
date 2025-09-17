@@ -8,7 +8,10 @@ import { useNavigate } from 'react-router-dom';
 function Showcase() {
   return (
     <Flex direction={"column"}>
-        <Globe />
+        <Flex position={"relative"} mt={"20vw"}>
+          <Globe />
+        </Flex>
+        
      
         <Navbar />
         <ProgressiveBlur height="10%" position="bottom" />
@@ -25,7 +28,7 @@ function Navbar() {
   const navigate = useNavigate();
   return (
     <Flex>
-      <ProgressiveBlur height="30%" position="top" />
+      <ProgressiveBlur height="25%" position="top" />
 
       <Flex width="full" position="fixed" zIndex={100} top={0} px={{ base: "5vw", md: "2vw" }} py={{ base: "4vw", md: "1.5vw" }}  justifyContent="space-between" alignItems="center">
         <Flex>
