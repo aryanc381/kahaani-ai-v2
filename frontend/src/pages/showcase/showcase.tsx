@@ -53,7 +53,7 @@ function Header() {
     <Flex>
     <Flex alignItems={"center"} direction={"column"} mt={"65vw"} justifyContent={"center"} mr={"2vw"} ml={"2vw"}>
       <Text fontSize={"7vw"} letterSpacing={"-0.4vw"} textAlign={{base: "center", md: ""}}>Your Personal Guide to Authentic Indian Monuments.</Text>
-      <Button variant="subtle" mt={"2vw"} borderRadius="3vw" px="6vw" py="4" onClick={() => {navigate('/ai')}}>Talk with Vaishvi<VscTelescope /></Button>
+      <Button variant="subtle" mt={"2vw"} borderRadius="3vw" px="6vw" py="4" onClick={() => {navigate('/home')}}>Talk with Vaishvi<VscTelescope /></Button>
     </Flex>
     
     </Flex>
