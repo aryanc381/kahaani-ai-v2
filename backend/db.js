@@ -43,10 +43,10 @@ const kahUsers = mongoose.Schema({
         type: Number
     },
     pendingUsers: [{
-        type: mongoose.Schema.Types.ObjectId, ref: "users"
+        type: String
     }],
     acceptedUsers: [{
-        type: mongoose.Schema.Types.ObjectId, ref: "users"
+        type: String
     }]
 
 }); 
