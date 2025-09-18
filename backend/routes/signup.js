@@ -46,7 +46,7 @@ router.post('/userSignUp', async (req, res) => {
         });
         
         return res.status(200).json({
-            msg: "User has been created successfully, navigating to login...",
+            msg: "User has been created successfully, Onboarding...",
             firstName: user.firstName,
             lastName: user.lastName,
             email: user.email,

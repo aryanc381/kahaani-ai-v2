@@ -11,7 +11,6 @@ function Showcase() {
       <Flex direction={"column"}>
           <Navbar />
           <ProgressiveBlur height="15%" position="bottom" />
-
           <Header />
       </Flex>
     </Flex>

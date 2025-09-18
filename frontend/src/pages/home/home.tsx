@@ -9,9 +9,7 @@ function Home() {
   return(
     <>
       <Navbar />
-      
       <CustomerInfo />
- 
       <Tours />
       <Discover />
       <Experiences />

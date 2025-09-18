@@ -32,7 +32,23 @@ const kahUsers = mongoose.Schema({
     },
     pfp: {
         type: String
-    }
+    },
+    friendsCount: {
+        type: Number
+    },
+    discoveriesCount: {
+        type: Number
+    },
+    citiesCount: {
+        type: Number
+    },
+    pendingUsers: [{
+        type: mongoose.Schema.Types.ObjectId, ref: "users"
+    }],
+    acceptedUsers: [{
+        type: mongoose.Schema.Types.ObjectId, ref: "users"
+    }]
+
 }); 
 
 const users = mongoose.model('users', kahUsers);

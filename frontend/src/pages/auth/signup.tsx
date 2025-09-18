@@ -28,7 +28,7 @@ function Signup() {
         });
         try {
             const response = await axios({
-                url: "https://grub-workable-rhino.ngrok-free.app/v1/api/root/userSignup",
+                url: "http://localhost:3000/v1/api/root/userSignup",
                 method: "POST",
                 data: {
                     firstName: firstName || '',
@@ -42,7 +42,7 @@ function Signup() {
             let color = '';
             console.log(response);
 
-            if(response.data.msg === "User has been created successfully, navigating to login...") {
+            if(response.data.msg === "User has been created successfully, Onboarding...") {
                 color = 'success';
                 setTimeout(() => {
                     navigate('/login');

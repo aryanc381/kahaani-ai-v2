@@ -1,6 +1,9 @@
+import { useState } from "react"
 import Navbar from "../navbar/navbar"
 import Sidebar from "../sidebar/sidebar"
-import { Avatar, AvatarGroup, Button, Card, Flex, Group, Heading, Input, Stack, Text } from "@chakra-ui/react"
+import { Avatar, AvatarGroup, Button, Table, Card, CloseButton, Dialog, Flex, Group, Heading, Input, Portal, Stack, Text } from "@chakra-ui/react"
+import { Toaster, toaster } from "@/components/ui/toaster"
+import axios from "axios"
 
 function Friends() {
   return (
@@ -53,30 +56,149 @@ function FriendReq() {
 }
 
 function Search() {
-    return (
+  type User = {
+    _id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    password: string;
+  };
+
+  const [mail, setMail] = useState('');
+  const [open, setOpen] = useState(false);
+  const [users, setUsers] = useState<User[]>([]);
+
+  async function SearchHandler() {
+    const toastId = toaster.create({
+      description: "Searching people...",
+      type: "loading",
+      id: "toast_id",
+    });
+
+    try {
+      const response = await axios({
+        url: "http://10.23.59.210:3000/v1/api/root/friends/search?email=" + mail,
+        method: "GET",
+      });
+
+      console.log(response.data);
+
+      let color = "";
+      if (response.data.msg === "Users found.") {
+        color = "success";
+        setUsers(response.data.usersData);
+        setOpen(true);
+      } else {
+        color = "error";
+      }
+
+      toaster.update(toastId, {
+        description: response.data.msg,
+        type: color,
+        duration: 3000,
+      });
+    } catch (err) {
+      toaster.update(toastId, {
+        type: "error",
+        description: "Backend Server Unavailable.",
+        duration: 3000,
+      });
+    }
+  }
+
+  return (
     <Flex justifyContent={"center"} mt={"5vw"}>
-    <Stack alignItems={"center"} textAlign={"center"}>
-      <Card.Root size="sm" width={"90vw"}>
-        <Card.Header>
-          <Heading size="lg">
-            <Flex>
+      <Toaster />
+
+      <Stack alignItems={"center"} textAlign={"center"}>
+        <Card.Root size="sm" width={"90vw"}>
+          <Card.Header>
+            <Heading size="lg">
+              <Flex>
                 <Text>Discover Friends</Text>
-            </Flex>
-          </Heading>
-        </Card.Header>
-        <Card.Body color="fg.muted">
-            
+              </Flex>
+            </Heading>
+          </Card.Header>
+
+          <Card.Body color="fg.muted">
             <Group attached w="full" maxW="sm">
-            <Input flex="1" placeholder="Enter email (ex.aryangmail.com)" />
-            <Button variant="solid">
+              <Input
+                flex="1"
+                placeholder="Enter email (ex.aryangmail.com)"
+                onChange={(e) => setMail(e.target.value)}
+              />
+              <Button variant="solid" onClick={SearchHandler}>
                 Search
-            </Button>
+              </Button>
             </Group>
-        </Card.Body>
-      </Card.Root>
-    </Stack> 
+          </Card.Body>
+        </Card.Root>
+      </Stack>
+      <Flex >
+      <Dialog.Root open={open}>
+        <Portal>
+          <Dialog.Backdrop />
+          <Dialog.Positioner>
+            <Dialog.Content ml={"3vw"} mr={"3vw"}>
+              <Dialog.Header>
+                <Dialog.Title>Users</Dialog.Title>
+              </Dialog.Header>
+
+              <Dialog.Body>
+                {users.length > 0 ? (
+                  <Table.Root size="sm" borderRadius={"10vw"}>
+                    <Table.Header>
+                      <Table.Row>
+                        <Table.ColumnHeader>Name</Table.ColumnHeader>
+                        <Table.ColumnHeader>Email</Table.ColumnHeader>
+                        <Table.ColumnHeader textAlign="end">Action</Table.ColumnHeader>
+                      </Table.Row>
+                    </Table.Header>
+
+                    <Table.Body>
+                      {users.map((user) => (
+                        <Table.Row key={user._id}>
+                          <Table.Cell>{user.firstName} {user.lastName}</Table.Cell>
+                          <Table.Cell>{user.email}</Table.Cell>
+                          <Table.Cell textAlign="end">
+                            <Button
+                              size="sm"
+                              variant="solid"
+                              onClick={() => {}}
+                            >
+                              Request
+                            </Button>
+                          </Table.Cell>
+                        </Table.Row>
+                      ))}
+                    </Table.Body>
+                  </Table.Root>
+                ) : (
+                  <Text>No users found.</Text>
+                )}
+              </Dialog.Body>
+
+              <Dialog.Footer>
+                <Dialog.ActionTrigger asChild>
+                  <Button variant="outline" onClick={() => setOpen(false)}>
+                    Back
+                  </Button>
+                </Dialog.ActionTrigger>
+              </Dialog.Footer>
+              
+
+              <Dialog.CloseTrigger asChild>
+                <CloseButton size="sm" />
+              </Dialog.CloseTrigger>
+            </Dialog.Content>
+          </Dialog.Positioner>
+        </Portal>
+      </Dialog.Root>
+      </Flex>
     </Flex>
-  )
+  );
 }
+
 
 export default Friends
