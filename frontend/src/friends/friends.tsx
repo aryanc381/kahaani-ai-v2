@@ -17,43 +17,154 @@ function Friends() {
 }
 
 function FriendReq() {
+  const [open, setOpen] = useState(false);
+  const [pending, setPending] = useState<string[]>([]);
+
+  const loggedInEmail = "aditya@gmail.com";
+
+  async function PendingHandler() {
+    try {
+      const response = await axios({
+        url: "http://10.23.59.210:3000/v1/api/root/friends/requests/incoming",
+        method: "GET",
+        params: {
+          email: loggedInEmail,
+        },
+      });
+
+      // backend sends `pending`, not `pendingUsers`
+      setPending(response.data.pending || []);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function AcceptHandler(fromEmail: string) {
+    try {
+      const response = await axios.post(
+        "http://10.23.59.210:3000/v1/api/root/friends/search/accept",
+        {
+          from: fromEmail,
+          to: loggedInEmail,
+        }
+      );
+      alert(response.data.msg);
+      // refresh list after accept
+      PendingHandler();
+    } catch (err: any) {
+      alert(err.response?.data?.msg || "Error accepting request");
+    }
+  }
+
   return (
     <Flex justifyContent={"center"} mt={"5vw"}>
-    <Stack alignItems={"center"} textAlign={"center"}>
-      <Card.Root size="sm" width={"90vw"}>
-        <Card.Header>
-          <Heading size="lg">Friend Requests</Heading>
-        </Card.Header>
-        <Card.Body color="fg.muted">
-            <Text mb={"4vw"}>12 people have requested to follow you.</Text>
-          <Flex justifyContent={"space-between"}>
-            <AvatarGroup gap="0" spaceX="-3" size="lg">
+      <Stack alignItems={"center"} textAlign={"center"}>
+        <Card.Root size="sm" width={"90vw"}>
+          <Card.Header>
+            <Heading size="lg">Friend Requests</Heading>
+          </Card.Header>
+          <Card.Body color="fg.muted">
+            <Flex justifyContent={"space-between"}>
+              <AvatarGroup gap="0" spaceX="-3" size="lg">
                 <Avatar.Root>
-                    <Avatar.Fallback name="Uchiha Sasuke" />
-                    <Avatar.Image src="https://cdn.myanimelist.net/r/84x124/images/characters/9/131317.webp?s=d4b03c7291407bde303bc0758047f6bd" />
+                  <Avatar.Fallback name="Uchiha Sasuke" />
+                  <Avatar.Image src="https://cdn.myanimelist.net/r/84x124/images/characters/9/131317.webp?s=d4b03c7291407bde303bc0758047f6bd" />
                 </Avatar.Root>
 
                 <Avatar.Root>
-                    <Avatar.Fallback name="Baki Ani" />
-                    <Avatar.Image src="https://cdn.myanimelist.net/r/84x124/images/characters/7/284129.webp?s=a8998bf668767de58b33740886ca571c" />
+                  <Avatar.Fallback name="Baki Ani" />
+                  <Avatar.Image src="https://cdn.myanimelist.net/r/84x124/images/characters/7/284129.webp?s=a8998bf668767de58b33740886ca571c" />
                 </Avatar.Root>
 
                 <Avatar.Root>
-                    <Avatar.Fallback name="Uchiha Chan" />
-                    <Avatar.Image src="https://cdn.myanimelist.net/r/84x124/images/characters/9/105421.webp?s=269ff1b2bb9abe3ac1bc443d3a76e863" />
+                  <Avatar.Fallback name="Uchiha Chan" />
+                  <Avatar.Image src="https://cdn.myanimelist.net/r/84x124/images/characters/9/105421.webp?s=269ff1b2bb9abe3ac1bc443d3a76e863" />
                 </Avatar.Root>
                 <Avatar.Root variant="solid">
-                    <Avatar.Fallback>+1</Avatar.Fallback>
+                  <Avatar.Fallback>+{pending.length}</Avatar.Fallback>
                 </Avatar.Root>
-                </AvatarGroup>
-                <Button>Open Requests</Button>
-          </Flex>
-        </Card.Body>
-      </Card.Root>
-    </Stack> 
+              </AvatarGroup>
+              <Button
+                onClick={() => {
+                  setOpen(true);
+                  PendingHandler();
+                }}
+              >
+                Open Requests
+              </Button>
+            </Flex>
+          </Card.Body>
+        </Card.Root>
+      </Stack>
+
+      {/* Dialog for pending requests */}
+      <Dialog.Root open={open}>
+        <Portal>
+          <Dialog.Backdrop />
+          <Dialog.Positioner>
+            <Dialog.Content ml={"3vw"} mr={"3vw"}>
+              <Dialog.Header>
+                <Dialog.Title>Incoming Friend Requests</Dialog.Title>
+              </Dialog.Header>
+
+              <Dialog.Body>
+                
+                {pending.length > 0 ? (
+                  <>
+                  <Text mb={"4vw"}>
+                    You have {pending.length} request(s).
+                  </Text>
+                  <Table.Root size="sm">
+                    <Table.Header>
+                      <Table.Row>
+                        <Table.ColumnHeader>Email</Table.ColumnHeader>
+                        <Table.ColumnHeader textAlign="end">
+                          Action
+                        </Table.ColumnHeader>
+                      </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                      {pending.map((email) => (
+                        <Table.Row key={email}>
+                          <Table.Cell>{email}</Table.Cell>
+                          <Table.Cell textAlign="end">
+                            <Button
+                              size="sm"
+                              variant="solid"
+                              onClick={() => AcceptHandler(email)}
+                            >
+                              Accept
+                            </Button>
+                          </Table.Cell>
+                        </Table.Row>
+                      ))}
+                    </Table.Body>
+                  </Table.Root>
+                  </>
+                ) : (
+                  <Text>No pending requests.</Text>
+                )}
+              </Dialog.Body>
+
+              <Dialog.Footer>
+                <Dialog.ActionTrigger asChild>
+                  <Button variant="outline" onClick={() => setOpen(false)}>
+                    Close
+                  </Button>
+                </Dialog.ActionTrigger>
+              </Dialog.Footer>
+
+              <Dialog.CloseTrigger asChild>
+                <CloseButton size="sm" />
+              </Dialog.CloseTrigger>
+            </Dialog.Content>
+          </Dialog.Positioner>
+        </Portal>
+      </Dialog.Root>
     </Flex>
-  ) 
+  );
 }
+
 
 function Search() {
   type User = {
@@ -102,6 +213,36 @@ function Search() {
       toaster.update(toastId, {
         type: "error",
         description: "Backend Server Unavailable.",
+        duration: 3000,
+      });
+    }
+  }
+
+  async function ReqHandler(to: string) {
+    const toastId = toaster.create({
+      description: "Sending request...",
+      type: "loading",
+      id: "req_toast_id",
+    });
+
+    try {
+      const response = await axios.post(
+        "http://10.23.59.210:3000/v1/api/root/friends/search/request",
+        {
+          from: "@gmail.com", //  replacing later with logged-in user email
+          to: to,
+        }
+      );
+
+      toaster.update(toastId, {
+        description: response.data.msg,
+        type: "success",
+        duration: 3000,
+      });
+    } catch (err: any) {
+      toaster.update(toastId, {
+        type: "info",
+        description: err.response?.data?.msg || "Request failed",
         duration: 3000,
       });
     }
@@ -165,7 +306,7 @@ function Search() {
                             <Button
                               size="sm"
                               variant="solid"
-                              onClick={() => {}}
+                              onClick={() => {ReqHandler(user.email)}}
                             >
                               Request
                             </Button>
@@ -201,4 +342,4 @@ function Search() {
 }
 
 
-export default Friends
+export default Friends;

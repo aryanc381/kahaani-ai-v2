@@ -2,6 +2,8 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import Navbar from "../../navbar/navbar";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../sidebar/sidebar";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 
@@ -22,10 +24,29 @@ function Home() {
 
 
 export function CustomerInfo() {
+  const [friendCount, setFriendCount] = useState(0);
+    useEffect(() => {
+      async function fetchFriends() {
+        try {
+          const response = await axios({
+            method: "GET",
+            url: "http://10.23.59.210:3000/v1/api/root/friends/count",
+            params: {
+              email: "admin@gmail.com"
+            }
+          });
+
+          setFriendCount(response.data.friendCount)
+        } catch(err) {
+          console.log("Internet Error");
+        }
+      }
+      fetchFriends();
+    }, [])
   return(
     <Flex justifyContent={"center"} gap={{base: "9vw"}} mt={{base: "7vw"}}>
       <Flex direction={"column"} textAlign={"center"} width={{base: "25vw"}}>
-        <Text textStyle={"5xl"} fontWeight={"600"}>9</Text>
+        <Text textStyle={"5xl"} fontWeight={"600"}>{friendCount}</Text>
         <Text textStyle={"md"} fontWeight={"300"}>Friends</Text>
       </Flex>
       
