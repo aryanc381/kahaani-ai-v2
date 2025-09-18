@@ -32,7 +32,7 @@ export function CustomerInfo() {
             method: "GET",
             url: "http://10.23.59.210:3000/v1/api/root/friends/count",
             params: {
-              email: "admin@gmail.com"
+              email: "aditya@gmail.com"
             }
           });
 

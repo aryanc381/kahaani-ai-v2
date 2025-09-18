@@ -97,7 +97,7 @@ function FriendReq() {
         </Card.Root>
       </Stack>
 
-      {/* Dialog for pending requests */}
+  
       <Dialog.Root open={open}>
         <Portal>
           <Dialog.Backdrop />
@@ -229,7 +229,7 @@ function Search() {
       const response = await axios.post(
         "http://10.23.59.210:3000/v1/api/root/friends/search/request",
         {
-          from: "@gmail.com", //  replacing later with logged-in user email
+          from: "aditya@gmail.com", //  replacing later with logged-in user email
           to: to,
         }
       );
