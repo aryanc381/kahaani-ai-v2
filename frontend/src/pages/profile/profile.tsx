@@ -2,11 +2,13 @@ import { Badge, Box, Button, Card, CloseButton, defineStyle, Drawer, Flex, Headi
 import { Avatar } from "@chakra-ui/react"
 import Navbar from '../../navbar/navbar'
 import Sidebar from '../../sidebar/sidebar'
-import { useState } from 'react'
+import {  useState } from 'react'
 import { VscArrowLeft, VscBroadcast, VscSettingsGear, VscVr } from 'react-icons/vsc'
 import { useColorMode, useColorModeValue } from '../../components/ui/color-mode'
 import { useNavigate } from 'react-router-dom'
 import { CustomerInfo } from '../home/home'
+import { useRecoilValue } from 'recoil'
+import { userInfo } from '@/store/atoms'
 
 
 function Profile() {
@@ -68,6 +70,8 @@ function Information() {
 }
 
 function Details() {
+  const userData = useRecoilValue(userInfo);
+  console.log(userData);
     const textColor = useColorModeValue("black", "white");
     return(
         <Flex>

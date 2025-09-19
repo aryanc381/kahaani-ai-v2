@@ -35,10 +35,16 @@ router.post('/userLogin', async (req, res) => {
                 });
             }
 
+            const firstName = await users.findOne({firstName: email});
+            const lastName = await users.findOne({lastName: email});
+            const phone = await users.findOne({phone: email});
+
             return res.status(200).json({
                 msg: "Login Successfull",
+                firstName: firstName,
+                lastName: lastName,
                 email: req.body.email,
-                password: req.body.password
+                phone: phone
             })
         }
     } catch(err) {

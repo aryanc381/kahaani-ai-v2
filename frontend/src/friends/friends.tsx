@@ -189,7 +189,7 @@ function Search() {
 
     try {
       const response = await axios({
-        url: "http://10.23.59.210:3000/v1/api/root/friends/search?email=" + mail,
+        url: "http://10.249.21.48:3000/v1/api/root/friends/search?email=" + mail,
         method: "GET",
       });
 
@@ -227,7 +227,7 @@ function Search() {
 
     try {
       const response = await axios.post(
-        "http://10.23.59.210:3000/v1/api/root/friends/search/request",
+        "http://10.249.21.48:3000/v1/api/root/friends/search/request",
         {
           from: "aditya@gmail.com", //  replacing later with logged-in user email
           to: to,

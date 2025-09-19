@@ -30,7 +30,7 @@ export function CustomerInfo() {
         try {
           const response = await axios({
             method: "GET",
-            url: "http://10.23.59.210:3000/v1/api/root/friends/count",
+            url: "http://10.249.21.48:3000/v1/api/root/friends/count",
             params: {
               email: "aditya@gmail.com"
             }

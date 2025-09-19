@@ -10,26 +10,28 @@ import Friends from './friends/friends'
 import Profile from './pages/profile/profile'
 import Ai from './pages/ai/ai'
 import Showcase from './pages/showcase/showcase'
+import { RecoilRoot } from 'recoil'
 
 function App() {
 
   return (
     <>
-
-    <BrowserRouter>
-      <Routes>
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/city' element={<City />} />
-        <Route path='/monuments' element={<Monuments />} />
-        <Route path='/map' element={<Gmap />} />
-        <Route path='/friends' element={<Friends />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/ai' element={<Ai />} />
-        <Route path='/' element={<Showcase />} />
-      </Routes>
-    </BrowserRouter>
+    <RecoilRoot>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/city' element={<City />} />
+          <Route path='/monuments' element={<Monuments />} />
+          <Route path='/map' element={<Gmap />} />
+          <Route path='/friends' element={<Friends />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/ai' element={<Ai />} />
+          <Route path='/' element={<Showcase />} />
+        </Routes>
+      </BrowserRouter>
+    </RecoilRoot>
     </>
   )
 }

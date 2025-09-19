@@ -3,11 +3,14 @@ import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { toaster, Toaster } from "../../components/ui/toaster";
+import { useRecoilState } from "recoil";
+import { userInfo } from "@/store/atoms";
 
 function Login() {
 
     const [mail, setMail] = useState('');
     const [password, setPassword] = useState('');
+    const [userData, setUserData] = useRecoilState(userInfo);
     const navigate = useNavigate();
 
     async function Loginhandler() {
@@ -29,7 +32,14 @@ function Login() {
 
             let color = "";
             if(response.data.msg === "Login Successfull") {
-                color = "success";    
+                color = "success"; 
+                setUserData({...userData, 
+                    lastName: response.data.lastName,
+                    firstName: response.data.firstName,
+                    phone: response.data.phone,
+                    email: response.data.email
+                }); 
+                navigate('/home');
             } else {
                 color = "error";
             }
