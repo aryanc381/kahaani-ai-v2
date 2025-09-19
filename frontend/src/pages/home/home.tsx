@@ -30,7 +30,7 @@ export function CustomerInfo() {
         try {
           const response = await axios({
             method: "GET",
-            url: "http://10.249.21.48:3000/v1/api/root/friends/count",
+            url: "https://somatological-solidly-marquita.ngrok-free.app/v1/api/root/friends/count",
             params: {
               email: "aditya@gmail.com"
             }
@@ -46,7 +46,7 @@ export function CustomerInfo() {
   return(
     <Flex justifyContent={"center"} gap={{base: "9vw"}} mt={{base: "7vw"}}>
       <Flex direction={"column"} textAlign={"center"} width={{base: "25vw"}}>
-        <Text textStyle={"5xl"} fontWeight={"600"}>{friendCount}</Text>
+        <Text textStyle={"5xl"} fontWeight={"600"}>4</Text>
         <Text textStyle={"md"} fontWeight={"300"}>Friends</Text>
       </Flex>
       
