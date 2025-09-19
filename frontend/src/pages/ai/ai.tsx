@@ -1,11 +1,9 @@
 
 import Navbar from "../../navbar/navbar"
 import Sidebar from "../../sidebar/sidebar"
-import { Avatar, AvatarGroup, Button, Card, Flex, Text } from "@chakra-ui/react";
+import { Button, Card, Flex, Text } from "@chakra-ui/react";
 import SiriWave from "siriwave";
 import { useEffect, useRef, useState } from "react";
-import { VscTelescope, VscVr } from "react-icons/vsc";
-import { useColorMode } from "@/components/ui/color-mode";
 import Vapi from '@vapi-ai/web';
 
 function Ai() {
