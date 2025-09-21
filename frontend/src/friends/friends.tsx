@@ -25,7 +25,7 @@ function FriendReq() {
   async function PendingHandler() {
     try {
       const response = await axios({
-        url: "https://somatological-solidly-marquita.ngrok-free.app/v1/api/root/friends/requests/incoming",
+        url: "http://192.168.1.61:3000/v1/api/root/friends/requests/incoming",
         method: "GET",
         params: {
           email: loggedInEmail,
@@ -42,7 +42,7 @@ function FriendReq() {
   async function AcceptHandler(fromEmail: string) {
     try {
       const response = await axios.post(
-        "https://somatological-solidly-marquita.ngrok-free.app/v1/api/root/friends/search/accept",
+        "http://192.168.1.61/v1/api/root/friends/search/accept",
         {
           from: fromEmail,
           to: loggedInEmail,
@@ -189,7 +189,7 @@ function Search() {
 
     try {
       const response = await axios({
-        url: "http://10.249.21.48:3000/v1/api/root/friends/search?email=" + mail,
+        url: "http://192.168.1.61:3000/v1/api/root/friends/search?email=" + mail,
         method: "GET",
       });
 
@@ -227,12 +227,13 @@ function Search() {
 
     try {
       const response = await axios.post(
-        "http://10.249.21.48:3000/v1/api/root/friends/search/request",
+        "http://192.168.1.61:3000/v1/api/root/friends/search/request",
         {
           from: "aditya@gmail.com", //  replacing later with logged-in user email
           to: to,
         }
       );
+      console.log(response);
 
       toaster.update(toastId, {
         description: response.data.msg,

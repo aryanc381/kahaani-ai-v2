@@ -80,7 +80,7 @@ function Maharashtra() {
 
   return (
     <>
-      {/* Drawer */}
+    
       <Drawer.Root size="full" open={open} onOpenChange={(e) => setOpen(e.open)}>
         <Portal>
           <Drawer.Backdrop />
@@ -90,7 +90,7 @@ function Maharashtra() {
               <Drawer.Body>
                 {selectedCity && (
                   <Flex direction="column" gap={6} align="center">
-                    {/* Tour Image */}
+                   
                     <Box position="relative" width="80%" borderRadius="2xl" overflow="hidden" boxShadow="md">
                       <Image src={`./${selectedCity}.png`} alt={CityMenus[selectedCity][0]} width="100%" />
                       <Text
@@ -103,12 +103,13 @@ function Maharashtra() {
                         textAlign="center"
                         color="white"
                         width="70vw"
+                        borderRadius={"50%"}
                       >
                         {CityMenus[selectedCity][0]}
                       </Text>
                     </Box>
 
-                    {/* Scrollable Description Card */}
+                  
                     <Card.Root width="100%" maxH={{ base: "30vh", md: "35vh" }} overflowY="auto" borderRadius="xl" boxShadow="sm" p={"6vw"}>
                       <Card.Header>
                         <Text  mt={"-5vw"} mb={"3vw"} ml={"-6.5vw"} fontSize="lg" fontWeight="semibold">Description</Text>
@@ -118,7 +119,6 @@ function Maharashtra() {
                       </Text>
                     </Card.Root>
 
-                    {/* Checkpoints */}
                     <Card.Root width="100%" borderRadius="xl" boxShadow="sm">
                       <Card.Header>
                         <Text fontSize="lg" fontWeight="semibold">Checkpoints</Text>
@@ -134,7 +134,7 @@ function Maharashtra() {
                       </Card.Body>
                     </Card.Root>
 
-                    {/* Price & Duration */}
+                
                     <Card.Root width="100%" borderRadius="xl" boxShadow="sm">
                       <Card.Body>
                         <Flex justify="space-between" align="center">
@@ -153,7 +153,7 @@ function Maharashtra() {
                 )}
               </Drawer.Body>
 
-              {/* Footer */}
+           
               <Drawer.Footer justifyContent="space-between" ml={"-2vw"}>
                 <Button variant="outline" onClick={() => setOpen(false)}>Close</Button>
                 <Flex gap={2}>
@@ -170,7 +170,7 @@ function Maharashtra() {
         </Portal>
       </Drawer.Root>
 
-      {/* Cities List */}
+    
       <Flex flexDirection="column" mt="0vw" mr="5.05vw" ml="5.05vw" fontWeight="500" letterSpacing="-0.2vw">
         <Text textStyle="4xl" mt="9vw" letterSpacing="-0.3vw" mb="2vw">Maharashtra</Text>
         <Flex

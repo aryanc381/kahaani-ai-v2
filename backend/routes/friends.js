@@ -1,9 +1,11 @@
 import express from 'express';
 import users from '../db.js';
+import cors from 'cors';
 
 const router = express.Router();
 
 router.use(express.json());
+router.use(cors());
 
 router.post('/friends/search/request', async (req, res) => {
     const { from, to } = req.body;

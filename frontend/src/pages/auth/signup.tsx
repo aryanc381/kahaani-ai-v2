@@ -28,7 +28,7 @@ function Signup() {
         });
         try {
             const response = await axios({
-                url: "http://localhost:3000/v1/api/root/userSignup",
+                url: "https://overgross-jeannette-manatoid.ngrok-free.app/v1/api/root/userSignup",
                 method: "POST",
                 data: {
                     firstName: firstName || '',

@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 5173,
-    allowedHosts: ["e09cb648711c.ngrok-free.app"]
+    allowedHosts: ["overgross-jeannette-manatoid.ngrok-free.app"]
   },
   resolve: {
     alias: {

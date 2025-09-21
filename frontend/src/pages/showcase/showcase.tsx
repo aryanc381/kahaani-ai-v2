@@ -1,8 +1,10 @@
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Status, Text } from '@chakra-ui/react';
 import { ProgressiveBlur } from "../../components/ui/progressive-blur";
 import { useColorMode, useColorModeValue } from '@/components/ui/color-mode';
 import { VscTelescope, VscVr } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
+import { ArcTimeline } from "../../components/ui/arc-timeline";
+import { Globe } from '@/components/ui/globe';
 
  
 function Showcase() {
@@ -11,6 +13,7 @@ function Showcase() {
       <Flex direction={"column"}>
           <Navbar />
           <ProgressiveBlur height="15%" position="bottom" />
+          
           <Header />
       </Flex>
     </Flex>
@@ -45,17 +48,46 @@ function Navbar() {
   );
 }
 
+function GlobeDemo() {
+  return (
+    <div className="relative flex size-full h-[85vw] max-w-md items-center justify-center overflow-hidden rounded-lg border bg-background px-40 pb-40 pt-8 md:pb-60">
+      <Globe className="" />
+    </div>
+  );
+}
+
 function Header() {
-  const navigate = useNavigate();
   return(
     <Flex>
-    <Flex alignItems={"center"} direction={"column"} mt={"65vw"} justifyContent={"center"} mr={"2vw"} ml={"2vw"}>
-      <Text fontSize={"7vw"} letterSpacing={"-0.4vw"} textAlign={{base: "center", md: ""}}>Your Personal Guide to Authentic Indian Monuments.</Text>
-      <Button variant="subtle" mt={"2vw"} borderRadius="3vw" px="6vw" py="4" onClick={() => {navigate('/home')}}>Talk with Vaishvi<VscTelescope /></Button>
+      <Flex mt={"10vw"} position={"relative"}></Flex>
+    <Flex  alignItems={"center"} direction={"column"} mt={"16vw"} justifyContent={"center"} mr={"2vw"} ml={"2vw"}>
+      <GlobeDemo />
+      <Text fontSize={"7vw"} letterSpacing={"-0.4vw"} mt={"4vw"} textAlign={{base: "center", md: ""}}>Your Personal Guide to Authentic Indian Monuments.</Text>
+      <Flex mt={"3vw"}>
+            <Status.Root size={"md"} width="15vw" colorPalette="green">
+              <Status.Indicator />
+              Live
+            </Status.Root>
+        <Button variant={"solid"}>Take a tour <VscTelescope /></Button>
+      </Flex>
+      
     </Flex>
-    
     </Flex>
   )
 }
+
+const data = [
+  {
+    time: "2025",
+    steps: [
+      { icon: <span>🚀</span>, content: "Launched v1" },
+      { icon: <span>✨</span>, content: "Improved UX" },
+    ],
+  },
+  {
+    time: "2026",
+    steps: [{ icon: <span>📈</span>, content: "Growth" }],
+  },
+];
 
 export default Showcase;

@@ -16,8 +16,9 @@ function App() {
 
   return (
     <>
-    <RecoilRoot>
+    <>
       <BrowserRouter>
+        <RecoilRoot>
         <Routes>
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
@@ -30,8 +31,9 @@ function App() {
           <Route path='/ai' element={<Ai />} />
           <Route path='/' element={<Showcase />} />
         </Routes>
+        </RecoilRoot>
       </BrowserRouter>
-    </RecoilRoot>
+    </>
     </>
   )
 }

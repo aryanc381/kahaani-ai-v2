@@ -10,11 +10,13 @@ function Ai() {
   return (
     <div>
         <Navbar />
+  
         <Sidebar />
         <Combination />
     </div>
   )
 }
+
 
 function Combination() {
   return (
