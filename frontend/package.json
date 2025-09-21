@@ -29,7 +29,7 @@
     "react-icons": "^5.5.0",
     "react-leaflet": "^4.2.1",
     "react-map-gl": "^8.0.4",
-    "react-router-dom": "^6.14.1",
+    "react-router-dom": "^7.9.1",
     "recoil": "^0.7.7",
     "siriwave": "^2.4.0",
     "tailwind-merge": "^3.3.1",
@@ -49,9 +49,5 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2"
-  },
-  "engines": {
-    "node": "22.x",
-    "npm": "9.x"
   }
 }
