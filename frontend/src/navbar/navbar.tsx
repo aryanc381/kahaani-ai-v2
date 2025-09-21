@@ -1,8 +1,7 @@
 import { Flex, HStack, Image, Text } from "@chakra-ui/react"
 import { useNavigate } from "react-router-dom";
 import { VscReactions } from "react-icons/vsc";
-import { useEffect, useState } from "react";
-import axios from "axios";
+
 
 
 

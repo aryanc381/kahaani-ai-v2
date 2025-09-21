@@ -46,7 +46,7 @@ export function CustomerInfo() {
   return(
     <Flex justifyContent={"center"} gap={{base: "9vw"}} mt={{base: "7vw"}}>
       <Flex direction={"column"} textAlign={"center"} width={{base: "25vw"}}>
-        <Text textStyle={"5xl"} fontWeight={"600"}>4</Text>
+        <Text textStyle={"5xl"} fontWeight={"600"}>{friendCount}</Text>
         <Text textStyle={"md"} fontWeight={"300"}>Friends</Text>
       </Flex>
       
