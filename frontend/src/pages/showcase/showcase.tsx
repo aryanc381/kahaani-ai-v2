@@ -66,11 +66,11 @@ function Header() {
               <Status.Indicator />
               Live
             </Status.Root>
-        <Button variant={"solid"}>Take a tour  <VscTelescope /></Button>
+        <Button borderRadius={"4vw"} variant={"solid"}>Take a tour  <VscTelescope /></Button>
       </Flex>
       <ArcTimeline data={data} />
      
-      <Text>Made by your dad ;p</Text>
+      <Text color={"gray.400"}>Made by your dad ;p</Text>
     </Flex>
     </Flex>
   )
