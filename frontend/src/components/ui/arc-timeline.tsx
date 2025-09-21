@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { ComponentPropsWithoutRef, ReactNode, useState } from "react";
-
+import { useState } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 export interface ArcTimelineItem {
   time: ReactNode;
   steps: Array<{
