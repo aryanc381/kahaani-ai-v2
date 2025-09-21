@@ -48,7 +48,7 @@ function Navbar() {
 
 function GlobeDemo() {
   return (
-    <div className="relative flex size-full h-[85vw] max-w-md items-center justify-center overflow-hidden rounded-lg border bg-background px-40 pb-40 pt-8 md:pb-60">
+    <div className="relative flex size-full h-[90vw] max-w-md items-center justify-center overflow-hidden rounded-lg border bg-background px-40 pb-40 pt-8 md:pb-60">
       <Globe className="" />
     </div>
   );
