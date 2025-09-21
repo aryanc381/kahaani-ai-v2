@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Status, Text } from '@chakra-ui/react';
 import { useColorMode, useColorModeValue } from '@/components/ui/color-mode';
-import { VscTelescope, VscVr } from 'react-icons/vsc';
+import { VscActivateBreakpoints, VscArchive, VscTelescope, VscVr } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
 import { ArcTimeline } from "../../components/ui/arc-timeline";
 import { Globe } from '@/components/ui/globe';
@@ -70,7 +70,7 @@ function Header() {
       </Flex>
       <ArcTimeline data={data} />
      
-      
+      <Text>Made by your dad ;p</Text>
     </Flex>
     </Flex>
   )
@@ -80,13 +80,13 @@ const data = [
   {
     time: "2025",
     steps: [
-      { icon: <span>🚀</span>, content: "Launched v1" },
-      { icon: <span>✨</span>, content: "Improved UX" },
+      { icon: <span><VscTelescope size={"5vw"}/></span>, content: "Launched v1" },
+      { icon: <span><VscArchive size={"5vw"}/></span>, content: "Improved UX" },
     ],
   },
   {
     time: "2026",
-    steps: [{ icon: <span>📈</span>, content: "Growth" }],
+    steps: [{ icon: <span><VscActivateBreakpoints size={"5vw"}/></span>, content: "Growth" }],
   },
 ];
 
