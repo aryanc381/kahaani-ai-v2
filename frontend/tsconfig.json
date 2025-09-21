@@ -9,12 +9,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "jsx": "react-jsx",
-    "esModuleInterop": true,
-    "allowJs": true,
-    "strict": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "forceConsistentCasingInFileNames": true
+    
   }
 }
