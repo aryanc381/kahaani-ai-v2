@@ -1,5 +1,4 @@
 import { Box, Button, Flex, Status, Text } from '@chakra-ui/react';
-import { ProgressiveBlur } from "../../components/ui/progressive-blur";
 import { useColorMode, useColorModeValue } from '@/components/ui/color-mode';
 import { VscTelescope, VscVr } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
@@ -12,7 +11,7 @@ function Showcase() {
     <Flex>
       <Flex direction={"column"}>
           <Navbar />
-          <ProgressiveBlur height="15%" position="bottom" />
+         
           
           <Header />
       </Flex>
@@ -28,7 +27,6 @@ function Navbar() {
   const navigate = useNavigate();
   return (
     <Flex>
-
       <Flex width="full" backgroundColor={overlayColor} position="fixed" top={0} px={{ base: "5vw", md: "2vw" }} py={{ base: "4vw", md: "1.5vw" }}  justifyContent="space-between" alignItems="center">
         <Flex>
           <Text letterSpacing={{ base: "-0.2vw" }} fontSize={{ base: "6vw", md: "2vw" }}>KahaaniAI</Text>
@@ -70,6 +68,8 @@ function Header() {
             </Status.Root>
         <Button variant={"solid"}>Take a tour <VscTelescope /></Button>
       </Flex>
+      <ArcTimeline data={data} />
+     
       
     </Flex>
     </Flex>
