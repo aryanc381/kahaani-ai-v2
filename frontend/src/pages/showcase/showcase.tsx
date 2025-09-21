@@ -66,7 +66,7 @@ function Header() {
               <Status.Indicator />
               Live
             </Status.Root>
-        <Button variant={"solid"}>Take a tour <VscTelescope /></Button>
+        <Button variant={"solid"}>Take a tour  <VscTelescope /></Button>
       </Flex>
       <ArcTimeline data={data} />
      
