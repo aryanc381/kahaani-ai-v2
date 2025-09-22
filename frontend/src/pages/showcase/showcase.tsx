@@ -484,10 +484,15 @@ function Footer() {
         <Card.Body>
           <Flex justifyContent={"space-between"}>
           <Flex direction={"column"}>
-            <Text fontSize={"10vw"} fontWeight={"300"} letterSpacing={"-0.5vw"}>KahaaniAI ®</Text>
+            <Text fontSize={"10vw"} fontWeight={"300"} letterSpacing={"-0.5vw"}>KahaaniAI®</Text>
             <Flex gap={"1.5vw"}>
-              <Kbd width={"18vw"}>Phase II</Kbd>
-              <Kbd  colorPalette={"green"} variant={"raised"} width={"20vw"}>Live</Kbd>
+              <Kbd width={"20vw"}>Phase II</Kbd>
+              <Kbd colorPalette={"green"} variant={"raised"} width={"20vw"}>
+                <Status.Root size={"md"} width="14vw" colorPalette="green" ml={"1vw"}>
+                  <Status.Indicator />Live
+                </Status.Root>
+              </Kbd>
+              
             </Flex>
             
             
