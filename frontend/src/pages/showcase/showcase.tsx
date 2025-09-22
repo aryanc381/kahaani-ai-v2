@@ -489,7 +489,19 @@ function Footer() {
             
           </Flex>
             <Flex direction={"column"}>
-              <Button mt={"3vw"} fontSize={"4vw"} borderRadius={"4vw"}>Contact Us</Button>
+              <Button
+                mt={"3vw"}
+                fontSize={"4vw"}
+                borderRadius={"4vw"}
+                colorScheme="whatsapp"
+                onClick={() => {
+                  const phone = "919049122622"; // country code + number
+                  const message = encodeURIComponent("Hey, I checked Kahaani, can we talk?");
+                  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+                }}
+              >
+                Contact Us
+              </Button>
               <Button variant={"subtle"} borderRadius={"4vw"} textAlign={"center"} mt={"2vw"} onClick={() => {navigate('/signup')}}>Signup</Button>
               <Button variant={"subtle"} borderRadius={"4vw"} textAlign={"center"} mt={"2vw"} onClick={() => {navigate('/login')}}>Login</Button>
               <Button variant={"subtle"} borderRadius={"4vw"} textAlign={"center"} mt={"2vw"} onClick={() => {navigate('/home')}}>Demo</Button>
