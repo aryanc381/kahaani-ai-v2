@@ -408,9 +408,24 @@ function Features() {
 
 function Creators() {
   const contributors = [
-    { name: "Aryan Chauhan", role: "Full Stack AI Developer", img: "./aryan.png" },
-    { name: "Aditya Yenpure", role: "Research & Ops", img: "./yenpure.png" },
-    { name: "Prof. Deepa Nath", role: "UI/UX Designer", img: "./deepa.png" },
+    { 
+      name: "Aryan Chauhan", 
+      role: "Full Stack AI Developer", 
+      img: "./aryan.png", 
+      link: "www.aryancodes.dev" 
+    },
+    { 
+      name: "Aditya Yenpure", 
+      role: "Research & Ops", 
+      img: "./yenpure.png", 
+      link: "https://www.linkedin.com/in/aditya-yenpure-5089832b1/?originalSubdomain=in" 
+    },
+    { 
+      name: "Prof. Deepa Nath", 
+      role: "UI/UX Designer", 
+      img: "./deepa.png", 
+      link: "https://research.mitwpu.edu.in/researcher/deepa-nath" 
+    },
   ];
 
   return (
@@ -441,9 +456,18 @@ function Creators() {
                 <Text fontWeight="300" fontSize="5vw">{c.name}</Text>
                 <Text fontWeight="400" fontSize="4vw" color="gray.500" width={"40vw"}>{c.role}</Text>
               </Flex>
-              <Button mt="4vw" alignSelf="flex-start" variant="subtle" borderRadius={"100vw"}  width={"10vw"} height={"10vw"}>→</Button>
+              <Button
+                mt="4vw"
+                alignSelf="flex-start"
+                variant="subtle"
+                borderRadius={"100vw"}
+                width={"10vw"}
+                height={"10vw"}
+                onClick={() => window.open(c.link, "_blank")} // opens link in new tab
+              >
+                →
+              </Button>
             </Flex>
-            
           </Card.Root>
         ))}
       </Flex>
