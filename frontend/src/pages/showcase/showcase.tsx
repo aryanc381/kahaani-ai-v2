@@ -117,12 +117,12 @@ function PixelScroll() {
   const overlayColor = useColorModeValue("rgba(246, 246, 246, 1)", "rgba(23, 23, 23, 1)");
   const bColor = useColorModeValue("rgba(118, 118, 118, 1)", "rgba(59, 59, 59, 1)");
   return (
-    <Flex flexDirection="column" mt="17vw"  ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
+    <Flex flexDirection="column" mt="17vw"  ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw" >
       <Text fontWeight="300" textAlign="center" textStyle="3xl" mt="9vw" letterSpacing="-0.3vw" mb="5.5vw">
         The KahaaniAI Project
       </Text>
 
-      <Flex ml={"4vw"} mr={"1.85vw"} mt="1vw" maxW="100%" overflowX="auto" flexWrap="nowrap" gap="3vw" css={{ "::-webkit-scrollbar": { display: "none" }, scrollbarWidth: "none", "-webkit-overflow-scrolling": "touch" }}>
+      <Flex height={"120vw"} ml={"4vw"} mr={"1.85vw"} mt="1vw" maxW="100%" overflowX="auto" flexWrap="nowrap" gap="3vw" css={{ "::-webkit-scrollbar": { display: "none" }, scrollbarWidth: "none", "-webkit-overflow-scrolling": "touch" }}>
         <Box flex="0 0 auto">
           <Card.Root size="lg" maxWidth={"75vw"} backgroundColor={overlayColor} border={"0.49vw"} borderColor={bColor} borderRadius={"10vw"} height={"110vw"}>
             <Card.Header>
@@ -438,7 +438,7 @@ function Creators() {
   ];
 
   return (
-    <Flex flexDirection="column" mt="15vw" ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
+    <Flex flexDirection="column" mt="10vw" ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
       <Text
         fontWeight="300"
         textAlign="center"
