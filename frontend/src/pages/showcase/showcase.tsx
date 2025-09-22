@@ -408,6 +408,7 @@ function Features() {
 }
 
 function Creators() {
+  const bColor = useColorModeValue("rgba(238, 238, 238, 1)", "rgba(25, 25, 25, 1)");
   const contributors = [
     { 
       name: "Aryan Chauhan", 
@@ -445,11 +446,15 @@ function Creators() {
       <Flex direction="column" gap="5vw">
         {contributors.map((c, idx) => (
           <Card.Root
+            mr={"3vw"}
+            ml={"4vw"}
             borderRadius={"8vw"}
             key={idx}
             p="4vw"
             display="flex"
             gap="2vw"
+            border={"0vw"}
+            backgroundColor={bColor}
           >
             <Flex direction={"row"}>
               <Image src={c.img} width="20vw" height="20vw" borderRadius="50%" />
