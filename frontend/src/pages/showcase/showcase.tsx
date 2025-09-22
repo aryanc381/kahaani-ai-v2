@@ -411,7 +411,7 @@ function Creators() {
   const contributors = [
     { 
       name: "Aryan Chauhan", 
-      role: "Full Stack AI Developer", 
+      role: "Fullstack AI Developer", 
       img: "./aryan.png", 
       link: "https://www.aryancodes.dev" 
     },
@@ -423,7 +423,7 @@ function Creators() {
     },
     { 
       name: "Prof. Deepa Nath", 
-      role: "UI/UX Designer", 
+      role: "Project Mentor", 
       img: "./deepa.png", 
       link: "https://research.mitwpu.edu.in/researcher/deepa-nath" 
     },
