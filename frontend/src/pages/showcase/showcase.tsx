@@ -409,6 +409,7 @@ function Features() {
 
 function Creators() {
   const bColor = useColorModeValue("rgba(246, 246, 246, 1)", "rgba(25, 25, 25, 1)");
+  const buttonColor = useColorModeValue("rgba(255, 255, 255, 0.68)", "rgba(16, 16, 16, 1)");
   const contributors = [
     { 
       name: "Aryan Chauhan", 
@@ -472,6 +473,7 @@ function Creators() {
                 mt="4vw"
                 alignSelf="flex-start"
                 variant="subtle"
+                backgroundColor={buttonColor}
                 borderRadius={"100vw"}
                 width={"10vw"}
                 height={"10vw"}
