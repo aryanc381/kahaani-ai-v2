@@ -485,7 +485,11 @@ function Footer() {
           <Flex justifyContent={"space-between"}>
           <Flex direction={"column"}>
             <Text fontSize={"10vw"} fontWeight={"300"} letterSpacing={"-0.5vw"}>KahaaniAI ®</Text>
-            <Kbd width={"20vw"}>Phase II</Kbd>
+            <Flex gap={"1.5vw"}>
+              <Kbd width={"18vw"}>Phase II</Kbd>
+              <Kbd  colorPalette={"green"} variant={"raised"} width={"20vw"}>Live</Kbd>
+            </Flex>
+            
             
           </Flex>
             <Flex direction={"column"}>
