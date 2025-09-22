@@ -1,6 +1,6 @@
 import { Box, Button, Card, Flex, Heading, Image, Status, Text } from '@chakra-ui/react';
 import { useColorMode, useColorModeValue } from '@/components/ui/color-mode';
-import { VscAccount, VscActivateBreakpoints, VscArchive, VscSettingsGear, VscTelescope, VscVr } from 'react-icons/vsc';
+import { VscAccount, VscActivateBreakpoints, VscArchive, VscLocation, VscPlayCircle, VscSettingsGear, VscTelescope, VscVr } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
 import { ArcTimeline } from "../../components/ui/arc-timeline";
 import { Globe } from '@/components/ui/globe';
@@ -29,6 +29,8 @@ function Showcase() {
           <PixelScroll /> 
           <ScrollText />
           <Preview />
+          <Features />
+          <Creators />
       </Flex>
     </Flex>
   )
@@ -313,6 +315,137 @@ function Preview() {
         <Button onClick={handleNext} variant={"subtle"} borderRadius={"10vw"} _hover={{ opacity: 0.8 }}>
           Next &nbsp; →
         </Button>
+      </Flex>
+    </Flex>
+  );
+}
+
+function Features() {
+  const overlayColor = useColorModeValue("rgba(246, 246, 246, 1)", "rgba(23, 23, 23, 1)");
+  const bColor = useColorModeValue("rgba(118, 118, 118, 1)", "rgba(59, 59, 59, 1)");
+  return (
+    <Flex flexDirection="column" mt="15vw"  ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
+      <Text fontWeight="300" textAlign="center" textStyle="3xl" mt="9vw" letterSpacing="-0.3vw" mb="5.5vw">
+        Features
+      </Text>
+
+      <Flex ml={"4vw"} mr={"1.85vw"} mt="1vw" maxW="100%" overflowX="auto" flexWrap="nowrap" gap="3vw" css={{ "::-webkit-scrollbar": { display: "none" }, scrollbarWidth: "none", "-webkit-overflow-scrolling": "touch" }}>
+        <Box flex="0 0 auto">
+          <Card.Root size="lg" maxWidth={"75vw"} backgroundColor={overlayColor} border={"0.49vw"} borderColor={bColor} borderRadius={"10vw"} height={"110vw"}>
+            <Card.Header>
+              <Heading fontSize={"5.5vw"} fontWeight={"200"}>
+                <Flex gap={"2vw"}>
+                  <VscPlayCircle style={{marginTop: "1.2vw"}} />
+                  <Text>Listening & Speaking AI</Text>
+                </Flex>
+              </Heading>
+            </Card.Header>
+            <Card.Body color="fg.muted" fontSize={"4.5vw"}>
+              <Flex direction={"column"} gap={"13vw"}>
+                <Text letterSpacing={"-0.1vw"} fontWeight={"200"}>
+                A conversational AI that listens while it talks, allowing you to interact naturally without ever waiting. 
+              </Text>
+              <Text>Speak freely at any moment, get instant, seamless responses, and experience a fully immersive, real-time conversation like never before.</Text>
+              </Flex>
+              
+              
+            </Card.Body>
+          </Card.Root>
+        </Box>
+
+        <Box flex="0 0 auto">
+          <Card.Root size="lg" maxWidth={"75vw"} backgroundColor={overlayColor} border={"0.49vw"} borderColor={bColor} borderRadius={"10vw"} height={"110vw"}>
+            <Card.Header>
+              <Heading fontSize={"5.5vw"} fontWeight={"200"}>
+                <Flex gap={"2vw"}>
+                  <VscLocation style={{marginTop: "1.1vw"}} />
+                  <Text>Real-time Geolocation</Text>
+                </Flex>
+              </Heading>
+            </Card.Header>
+            <Card.Body color="fg.muted" fontSize={"4.5vw"}>
+              <Flex direction={"column"} gap={"12vw"}>
+                <Text letterSpacing={"-0.1vw"} fontWeight={"200"}>
+                  Track your exact location during tours and receive live, context-aware guidance from AI or verified local guides.
+                </Text>
+              
+                <Text>
+                  Navigate seamlessly through monuments and historical sites with precise directions and instant updates for a truly immersive experience.
+                </Text>
+              </Flex>
+              
+              
+            </Card.Body>
+          </Card.Root>
+        </Box>
+
+        <Box flex="0 0 auto">
+          <Card.Root size="lg" maxWidth={"75vw"} backgroundColor={overlayColor} border={"0.49vw"} borderColor={bColor} borderRadius={"10vw"} height={"110vw"}>
+            <Card.Header>
+              <Heading fontSize={"5.5vw"} fontWeight={"200"}>
+                <Flex gap={"2vw"}>
+                  <VscSettingsGear style={{marginTop: "1vw"}} />
+                  <Text>Verified Information</Text>
+                </Flex>
+              </Heading>
+            </Card.Header>
+            <Card.Body color="fg.muted" fontSize={"4.5vw"}>
+              <Flex direction={"column"} gap={"5vw"}>
+                <Text letterSpacing={"-0.1vw"} fontWeight={"200"}>
+                Access accurate, fact-checked details about monuments and sites, curated from trusted sources.
+              </Text>
+              <Text>Ensure every piece of information you receive, whether from AI or guides is reliable, culturally sensitive, and historically precise.</Text>
+              </Flex>
+              
+              
+            </Card.Body>
+          </Card.Root>
+        </Box>
+      </Flex>
+    </Flex>
+  );
+}
+
+function Creators() {
+  const contributors = [
+    { name: "Aryan Chauhan", role: "Full Stack AI Developer", img: "./aryan.png" },
+    { name: "Aditya Yenpure", role: "Research & Ops", img: "./yenpure.png" },
+    { name: "Prof. Deepa Nath", role: "UI/UX Designer", img: "./deepa.png" },
+  ];
+
+  return (
+    <Flex flexDirection="column" mt="15vw" ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
+      <Text
+        fontWeight="300"
+        textAlign="center"
+        textStyle="3xl"
+        mt="9vw"
+        letterSpacing="-0.3vw"
+        mb="5.5vw"
+      >
+        Creators
+      </Text>
+
+      <Flex direction="column" gap="5vw">
+        {contributors.map((c, idx) => (
+          <Card.Root
+            borderRadius={"8vw"}
+            key={idx}
+            p="4vw"
+            display="flex"
+            gap="2vw"
+          >
+            <Flex direction={"row"}>
+              <Image src={c.img} width="20vw" height="20vw" borderRadius="50%" />
+              <Flex direction="column" flex="1" ml={"5vw"} mt={"3vw"}>
+                <Text fontWeight="300" fontSize="5vw">{c.name}</Text>
+                <Text fontWeight="400" fontSize="4vw" color="gray.500" width={"40vw"}>{c.role}</Text>
+              </Flex>
+              <Button mt="4vw" alignSelf="flex-start" variant="subtle" borderRadius={"100vw"}  width={"10vw"} height={"10vw"}>→</Button>
+            </Flex>
+            
+          </Card.Root>
+        ))}
       </Flex>
     </Flex>
   );
