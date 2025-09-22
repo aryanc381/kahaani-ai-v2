@@ -428,6 +428,12 @@ function Creators() {
       img: "./deepa.png", 
       link: "https://research.mitwpu.edu.in/researcher/deepa-nath" 
     },
+    {
+      name: "Vaishvi Patel",
+      role: "AI Voice Specialist",
+      img: "./vaishvi.png",
+      link: "https://www.linkedin.com/in/vaishvi-patel-36119b328/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    }
   ];
 
   return (
