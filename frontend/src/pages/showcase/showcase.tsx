@@ -4,6 +4,7 @@ import { VscActivateBreakpoints, VscArchive, VscTelescope, VscVr } from 'react-i
 import { useNavigate } from 'react-router-dom';
 import { ArcTimeline } from "../../components/ui/arc-timeline";
 import { Globe } from '@/components/ui/globe';
+import { Highlighter } from "@/components/ui/highlighter";
 
  
 function Showcase() {
@@ -60,13 +61,20 @@ function Header() {
       <Flex mt={"10vw"} position={"relative"}></Flex>
     <Flex  alignItems={"center"} direction={"column"} mt={"16vw"} justifyContent={"center"} mr={"2vw"} ml={"2vw"}>
       <GlobeDemo />
-      <Text fontSize={"7vw"} letterSpacing={"-0.4vw"} mt={"5vw"} textAlign={{base: "center", md: ""}}>Your Personal Guide to Authentic Indian Monuments.</Text>
+      <Text  fontSize={"7vw"} letterSpacing={"-0.4vw"} mt={"5vw"} textAlign={{base: "center", md: ""}}>
+        <p>
+            Your{" "}
+          <Highlighter action="underline" color="#FF9800">
+            {" "} Personal{" "}
+          </Highlighter>{" "}
+            Guide for Authentic Indian Monuments.
+        </p></Text>
       <Flex mt={"3vw"}>
-            <Status.Root size={"md"} width="15vw" colorPalette="green">
+            <Status.Root size={"md"} width="14vw" colorPalette="green">
               <Status.Indicator />
               Live
             </Status.Root>
-        <Button borderRadius={"4vw"} variant={"solid"}>Take a tour  <VscTelescope /></Button>
+        <Button borderRadius={"4vw"} variant={"solid"}>Take a free tour  <VscTelescope /></Button>
       </Flex>
       <ArcTimeline data={data} />
      
