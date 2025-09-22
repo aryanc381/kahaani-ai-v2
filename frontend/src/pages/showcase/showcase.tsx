@@ -26,10 +26,10 @@ function Showcase() {
           <Navbar />
           <Header />
           <Arc />
-          <PixelScroll /> 
+          <Features />
           <ScrollText />
           <Preview />
-          <Features />
+          <PixelScroll />
           <Creators />
           <Footer />
       </Flex>
@@ -117,7 +117,7 @@ function PixelScroll() {
   const overlayColor = useColorModeValue("rgba(246, 246, 246, 1)", "rgba(23, 23, 23, 1)");
   const bColor = useColorModeValue("rgba(118, 118, 118, 1)", "rgba(59, 59, 59, 1)");
   return (
-    <Flex flexDirection="column" mt="-5vw"  ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
+    <Flex flexDirection="column" mt="17vw"  ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
       <Text fontWeight="300" textAlign="center" textStyle="3xl" mt="9vw" letterSpacing="-0.3vw" mb="5.5vw">
         The KahaaniAI Project
       </Text>
@@ -185,7 +185,7 @@ function PixelScroll() {
             <Card.Body color="fg.muted" fontSize={"4.5vw"}>
               <Flex direction={"column"} gap={"5vw"}>
                 <Text letterSpacing={"-0.1vw"} fontWeight={"200"}>
-                KahaaniAI is powered by an Automatic Speech Recognition (ASR), Retrieval-Augmented Generation (RAG), and Text-to-Speech (TTS) pipeline, enabling seamless real-time voice interactions with an AI guide.
+                KahaaniAI is powered by an Automatic Speech Recognition (ASR), Retrieval-Augmented Generation (RAG), and Text-to-Speech (TTS) pipeline, enabling seamless real-time voice interactions.
               </Text>
               <Text>The platform is built on React and React Native to ensure accessibility across web and mobile.</Text>
               </Flex>
@@ -287,7 +287,7 @@ function Preview() {
   };
 
   return (
-    <Flex flexDirection="column" mt="15vw" ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
+    <Flex flexDirection="column" mt="16vw" ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
       <Text
         fontWeight="300"
         textAlign="center"
@@ -325,7 +325,7 @@ function Features() {
   const overlayColor = useColorModeValue("rgba(246, 246, 246, 1)", "rgba(23, 23, 23, 1)");
   const bColor = useColorModeValue("rgba(118, 118, 118, 1)", "rgba(59, 59, 59, 1)");
   return (
-    <Flex flexDirection="column" mt="15vw"  ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
+    <Flex flexDirection="column"  ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw" mt={"-5vw"}>
       <Text fontWeight="300" textAlign="center" textStyle="3xl" mt="9vw" letterSpacing="-0.3vw" mb="5.5vw">
         Features
       </Text>
@@ -408,7 +408,7 @@ function Features() {
 }
 
 function Creators() {
-  const bColor = useColorModeValue("rgba(238, 238, 238, 1)", "rgba(25, 25, 25, 1)");
+  const bColor = useColorModeValue("rgba(246, 246, 246, 1)", "rgba(25, 25, 25, 1)");
   const contributors = [
     { 
       name: "Aryan Chauhan", 
