@@ -1,10 +1,11 @@
-import { Box, Button, Flex, Image, Status, Text } from '@chakra-ui/react';
+import { Box, Button, Card, Flex, Heading, Image, Status, Text } from '@chakra-ui/react';
 import { useColorMode, useColorModeValue } from '@/components/ui/color-mode';
-import { VscActivateBreakpoints, VscArchive, VscTelescope, VscVr } from 'react-icons/vsc';
+import { VscAccount, VscActivateBreakpoints, VscArchive, VscSettingsGear, VscTelescope, VscVr } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
 import { ArcTimeline } from "../../components/ui/arc-timeline";
 import { Globe } from '@/components/ui/globe';
 import { Highlighter } from "@/components/ui/highlighter";
+
 
 import {
   ScrollVelocityContainer,
@@ -12,6 +13,7 @@ import {
 } from "@/components/ui/scroll-based-velocity";
 
 import { NumberTicker } from "@/components/ui/number-ticker";
+import { useState } from 'react';
 
 
 
@@ -23,10 +25,10 @@ function Showcase() {
       <Flex direction={"column"}>
           <Navbar />
           <Header />
-          <PixelScroll />
           <Arc />
+          <PixelScroll /> 
           <ScrollText />
-          
+          <Preview />
       </Flex>
     </Flex>
   )
@@ -42,7 +44,7 @@ function Navbar() {
     <Flex>
       <Flex zIndex={"400"} width="full" backgroundColor={overlayColor} position="fixed" top={0} px={{ base: "5vw", md: "2vw" }} py={{ base: "4vw", md: "1.5vw" }}  justifyContent="space-between" alignItems="center">
         <Flex>
-          <Text letterSpacing={{ base: "-0.2vw" }} fontSize={{ base: "6vw", md: "2vw" }}>KahaaniAI</Text>
+          <Text letterSpacing={{ base: "-0.2vw" }} fontSize={{ base: "6vw", md: "2vw" }} >KahaaniAI</Text>
           <Box ml={{base: "2vw"}} mt={{base: "0.5vw"}}>
             <VscVr size="8vw" onClick={toggleColorMode} />
           </Box>
@@ -109,28 +111,86 @@ function Header() {
 }
 
 function PixelScroll() {
-  const navigate = useNavigate();
+  const overlayColor = useColorModeValue("rgba(246, 246, 246, 1)", "rgba(23, 23, 23, 1)");
+  const bColor = useColorModeValue("rgba(118, 118, 118, 1)", "rgba(59, 59, 59, 1)");
   return (
-    <Flex  flexDirection={"column"} mt={{base: "15vw"}} mr={{base: "5.05vw"}} ml={{base: "5.05vw"}} fontWeight={{base: "500"}} letterSpacing={{base: "-0.2vw"}} >
-      <Flex mt={"1vw"} overflowX="auto" flexWrap="nowrap" gap="0.5vw" css={{ "::-webkit-scrollbar": { display: "none" }, scrollbarWidth:"none", "-webkit-overflow-scrolling": "touch"}} >
-        <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "0vw"}}>
-          <Image src="./Gradient (1).svg" width={{base: "80vw"}} height={{base: "120vw"}} borderRadius={{base: "15vw"}} onClick={() => {navigate('/city')}}/>
-          <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">City</Text>
+    <Flex flexDirection="column" mt="-5vw"  ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
+      <Text fontWeight="300" textAlign="center" textStyle="3xl" mt="9vw" letterSpacing="-0.3vw" mb="5.5vw">
+        The KahaaniAI Project
+      </Text>
+
+      <Flex ml={"4vw"} mr={"1.85vw"} mt="1vw" maxW="100%" overflowX="auto" flexWrap="nowrap" gap="3vw" css={{ "::-webkit-scrollbar": { display: "none" }, scrollbarWidth: "none", "-webkit-overflow-scrolling": "touch" }}>
+        <Box flex="0 0 auto">
+          <Card.Root size="lg" maxWidth={"75vw"} backgroundColor={overlayColor} border={"0.49vw"} borderColor={bColor} borderRadius={"10vw"} height={"110vw"}>
+            <Card.Header>
+              <Heading fontSize={"5.5vw"} fontWeight={"200"}>
+                <Flex gap={"2vw"}>
+                  <VscTelescope style={{marginTop: "1vw"}} />
+                  <Text>What is Kahaani</Text>
+                </Flex>
+              </Heading>
+            </Card.Header>
+            <Card.Body color="fg.muted" fontSize={"4.5vw"}>
+              <Flex direction={"column"} gap={"13vw"}>
+                <Text letterSpacing={"-0.1vw"} fontWeight={"200"}>
+                KahaaniAI is an AI-driven tourism platform that provides tourists with authentic, fact-checked, and culturally sensitive information about Indian monuments. 
+              </Text>
+              <Text>It combines virtual AI tour guides with verified human guides to enhance travel experiences.</Text>
+              </Flex>
+              
+              
+            </Card.Body>
+          </Card.Root>
         </Box>
-        <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
-            <Image src="./museums.svg" width={{base: "80vw"}} height={{base: "120vw"}} borderRadius={{base: "15vw"}} onClick={() => {navigate('/city')}}/>
-            <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Monuments</Text>
+
+        <Box flex="0 0 auto">
+          <Card.Root size="lg" maxWidth={"75vw"} backgroundColor={overlayColor} border={"0.49vw"} borderColor={bColor} borderRadius={"10vw"} height={"110vw"}>
+            <Card.Header>
+              <Heading fontSize={"5.5vw"} fontWeight={"200"}>
+                <Flex gap={"2vw"}>
+                  <VscAccount style={{marginTop: "1vw"}} />
+                  <Text>Why we made Kahaani</Text>
+                </Flex>
+              </Heading>
+            </Card.Header>
+            <Card.Body color="fg.muted" fontSize={"4.5vw"}>
+              <Flex direction={"column"} gap={"12vw"}>
+                <Text letterSpacing={"-0.1vw"} fontWeight={"200"}>
+                  We created KahaaniAI to address the issues of unreliable, rushed, or biased human tour guides who often spread misinformation or behave unprofessionally.
+                </Text>
+              
+                <Text>
+                  Our goal is to ensure tourists have safe, respectful, and accurate cultural experiences.
+                </Text>
+              </Flex>
+              
+              
+            </Card.Body>
+          </Card.Root>
         </Box>
-        <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
-            <Image src="./Gradient3.png" width={{base: "80vw"}} height={{base: "120vw"}} borderRadius={{base: "15vw"}} onClick={() => {navigate('/city')}} />
-            <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Museums</Text>
+
+        <Box flex="0 0 auto">
+          <Card.Root size="lg" maxWidth={"75vw"} backgroundColor={overlayColor} border={"0.49vw"} borderColor={bColor} borderRadius={"10vw"} height={"110vw"}>
+            <Card.Header>
+              <Heading fontSize={"5.5vw"} fontWeight={"200"}>
+                <Flex gap={"2vw"}>
+                  <VscSettingsGear style={{marginTop: "1vw"}} />
+                  <Text>How we made Kahaani</Text>
+                </Flex>
+              </Heading>
+            </Card.Header>
+            <Card.Body color="fg.muted" fontSize={"4.5vw"}>
+              <Flex direction={"column"} gap={"5vw"}>
+                <Text letterSpacing={"-0.1vw"} fontWeight={"200"}>
+                KahaaniAI is powered by an Automatic Speech Recognition (ASR), Retrieval-Augmented Generation (RAG), and Text-to-Speech (TTS) pipeline, enabling seamless real-time voice interactions with an AI guide.
+              </Text>
+              <Text>The platform is built on React and React Native to ensure accessibility across web and mobile.</Text>
+              </Flex>
+              
+              
+            </Card.Body>
+          </Card.Root>
         </Box>
-        <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
-            <Image src="./budget.png" width={{base: "80vw"}} height={{base: "120vw"}} borderRadius={{base: "15vw"}} onClick={() => {navigate('/city')}}/>
-            <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Budget</Text>
-        </Box>
-        
-        
       </Flex>
     </Flex>
   );
@@ -140,8 +200,10 @@ function ScrollText() {
 
   const overlayColor = useColorModeValue("rgba(246, 246, 246, 1)", "rgba(23, 23, 23, 1)");
   return(
-    <Flex direction={"column"} justifyContent={"center"} mt={"1vw"}>
-      <Flex mt={"5vw"} fontSize={"10vw"} gap={"2vw"} justifyContent={"center"}>  
+    <Flex direction={"column"} justifyContent={"center"} mt={"20vw"}>
+      <Text textAlign={{base: "center"}} textStyle={{base: "3xl"}} mt={{base: "9vw"}} letterSpacing={{base: "-0.3vw"}} mb={{base: "5.5vw"}} >Deployed AI Tours</Text>
+      <Flex fontSize={"10vw"} gap={"2vw"} justifyContent={"center"}>  
+        
         <Flex lineHeight={"10vw"} alignItems={"center"} direction={"column"} width={"29vw"} backgroundColor={overlayColor} pt={"3vw"} pb={"1vw"} borderRadius={"6vw"}> 
           <NumberTicker value={21} className='tracking-[-0.4vw]' />
           <Text letterSpacing={"-0.2vw"} fontSize={"4vw"}>Cities</Text>
@@ -152,10 +214,10 @@ function ScrollText() {
         </Flex>
         <Flex lineHeight={"10vw"} alignItems={"center"} direction={"column"} width={"29vw"} backgroundColor={overlayColor} pt={"3vw"} pb={"1vw"} borderRadius={"6vw"}>
           <NumberTicker value={14} className='tracking-[-0.4vw]' />
-          <Text letterSpacing={"-0.2vw"} fontSize={"4vw"}>People</Text>
+          <Text letterSpacing={"-0.2vw"} fontSize={"4vw"}>Users</Text>
         </Flex>
       </Flex>
-      <Flex justifyContent={"center"} alignItems={"center"} width={"100vw"} mt={"4vw"}>
+      <Flex justifyContent={"center"} alignItems={"center"} width={"80vw"} ml={"10vw"} mr={"10vw"} mt={"4vw"}>
         <ScrollVelocityContainer>
         <ScrollVelocityRow baseVelocity={3} direction={1}>
           <Flex justifyContent={"center"} gap={"10vw"} fontSize={"7vw"} fontWeight={900} color={"#969490"} letterSpacing={"-0.7vw"}>
@@ -196,12 +258,64 @@ const data = [
 ];
 function Arc() {
   return(
-    <ArcTimeline data={data} />
+    <Flex direction={"column"}>
+      <Text fontWeight={{base: "300"}} textAlign={{base: "center"}} textStyle={{base: "3xl"}} mt={{base: "27vw"}} letterSpacing={{base: "-0.3vw"}} mb={{base: "5.5vw"}} >Project Timeline</Text>
+      <Flex mt={"-15vw"}>
+        <ArcTimeline data={data} />
+      </Flex>
+        
+      
+    </Flex>
+    
   )
 }
 
+function Preview() {
+  const [index, setIndex] = useState(0);
 
+  const images = ["./imageK2.png", "./Gradient2.png", "./imageK2.png"];
 
+  const handleNext = () => {
+    setIndex((prev) => (prev + 1) % images.length);
+  };
 
+  const handlePrev = () => {
+    setIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  return (
+    <Flex flexDirection="column" mt="15vw" ml="4vw" fontWeight="500" letterSpacing="-0.2vw" w="90vw">
+      <Text
+        fontWeight="300"
+        textAlign="center"
+        textStyle="3xl"
+        mt="9vw"
+        letterSpacing="-0.3vw"
+        mb="5.5vw"
+      >
+        Preview
+      </Text>
+
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        mt="1vw"
+      >
+        <Box>
+          <Image ml={"1vw"} src={images[index]} width={"70vw"} />
+        </Box>
+      </Flex>
+
+      <Flex justifyContent="center" ml={"1vw"} mt="4vw" gap="2vw">
+        <Button onClick={handlePrev} variant={"subtle"} borderRadius={"10vw"} _hover={{ opacity: 0.8 }}>
+         ← &nbsp; Prev 
+        </Button>
+        <Button onClick={handleNext} variant={"subtle"} borderRadius={"10vw"} _hover={{ opacity: 0.8 }}>
+          Next &nbsp; →
+        </Button>
+      </Flex>
+    </Flex>
+  );
+}
 
 export default Showcase;
