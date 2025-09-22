@@ -1,4 +1,4 @@
-import { Box, Button, Card, Flex, Heading, Image, Status, Text } from '@chakra-ui/react';
+import { Box, Button, Card, Flex, Heading, Image, Kbd, Status, Text } from '@chakra-ui/react';
 import { useColorMode, useColorModeValue } from '@/components/ui/color-mode';
 import { VscAccount, VscActivateBreakpoints, VscArchive, VscLocation, VscPlayCircle, VscSettingsGear, VscTelescope, VscVr } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
@@ -31,6 +31,7 @@ function Showcase() {
           <Preview />
           <Features />
           <Creators />
+          <Footer />
       </Flex>
     </Flex>
   )
@@ -412,7 +413,7 @@ function Creators() {
       name: "Aryan Chauhan", 
       role: "Full Stack AI Developer", 
       img: "./aryan.png", 
-      link: "www.aryancodes.dev" 
+      link: "https://www.aryancodes.dev" 
     },
     { 
       name: "Aditya Yenpure", 
@@ -473,6 +474,32 @@ function Creators() {
       </Flex>
     </Flex>
   );
+}
+
+function Footer() {
+  const navigate = useNavigate();
+  return(
+    <Flex>
+      <Card.Root size="sm" width={"90vw"}  mt={"25vw"} mr={"5vw"} ml={"5vw"} borderRadius={"8vw"} pb={"3vw"}>
+        <Card.Body>
+          <Flex justifyContent={"space-between"}>
+          <Flex direction={"column"}>
+            <Text fontSize={"10vw"} fontWeight={"300"} letterSpacing={"-0.5vw"}>KahaaniAI ®</Text>
+            <Kbd width={"20vw"}>Phase II</Kbd>
+            
+          </Flex>
+            <Flex direction={"column"}>
+              <Button mt={"3vw"} fontSize={"4vw"} borderRadius={"4vw"}>Contact Us</Button>
+              <Button variant={"subtle"} borderRadius={"4vw"} textAlign={"center"} mt={"2vw"} onClick={() => {navigate('/signup')}}>Signup</Button>
+              <Button variant={"subtle"} borderRadius={"4vw"} textAlign={"center"} mt={"2vw"} onClick={() => {navigate('/login')}}>Login</Button>
+              <Button variant={"subtle"} borderRadius={"4vw"} textAlign={"center"} mt={"2vw"} onClick={() => {navigate('/home')}}>Demo</Button>
+            </Flex>
+          
+          </Flex>
+        </Card.Body>
+      </Card.Root>
+    </Flex>
+  )
 }
 
 export default Showcase;
