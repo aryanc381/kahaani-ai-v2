@@ -76,6 +76,21 @@ function GlobeDemo() {
     <div className="z-500 relative flex size-full h-[90vw] max-w-md items-center justify-center overflow-hidden rounded-lg border bg-background px-40 pb-40 pt-8 md:pb-60">
       <Globe className="" />
     </div>
+
+    // <Flex
+    //   width={{ base: '85vw', md: '30vw' }}   // full width on phone, smaller on desktop
+    //   height={{ base: '85vw', md: '30vw' }}  // keep square
+    //   justify="center"
+    //   align="center"
+    //   mx="auto"
+    // >
+    //   <DomeGallery
+    //     fit={0.7}                   // smaller than 1 to fit mobile screen
+    //     maxRadius={300}             // limit dome radius on phones
+    //     fitBasis="min"              // base on smaller dimension
+    //   />
+    // </Flex>
+    
   );
 }
 
