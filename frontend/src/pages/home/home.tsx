@@ -30,7 +30,7 @@ export function CustomerInfo() {
         try {
           const response = await axios({
             method: "GET",
-            url: "https://somatological-solidly-marquita.ngrok-free.app/v1/api/root/friends/count",
+            url: "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/friends/count",
             params: {
               email: "aditya@gmail.com"
             }

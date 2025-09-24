@@ -7,9 +7,12 @@ import { VscArrowLeft, VscBroadcast, VscSettingsGear, VscVr } from 'react-icons/
 import { useColorMode, useColorModeValue } from '../../components/ui/color-mode'
 import { useNavigate } from 'react-router-dom'
 import { CustomerInfo } from '../home/home'
+import useUserStore from '@/store/userStore'
 
 function Profile() {
   return (
+
+    
     <div>
         <Navbar />
         <Sidebar />
@@ -26,6 +29,8 @@ const ringCss = defineStyle({
 });
 
 function Information() {
+  const user = useUserStore((state) => state.user);
+
   return (
     <>
     
@@ -48,7 +53,7 @@ function Information() {
           </Avatar.Root>
           <Box>
             <Flex>
-              <Heading size={{ base: "lg", md: "xl" }}>Aryan Chauhan</Heading><Badge ml={"2vw"} colorPalette={"green"}>premium</Badge>
+              <Heading size={{ base: "lg", md: "xl" }}>{user?.firstName} {user?.lastName}</Heading><Badge ml={"2vw"} colorPalette={"green"}>premium</Badge>
             </Flex>
             
             <Flex fontSize="sm" color="gray.500" mt={"1vw"}>
@@ -68,6 +73,7 @@ function Information() {
 
 function Details() {
     const textColor = useColorModeValue("black", "white");
+    const user = useUserStore((state) => state.user);
     return(
         <Flex>
         <Card.Root size="sm" width={"full"} mr={"5vw"} ml={"5vw"} mt={"4vw"} borderRadius={"3vw"}>
@@ -75,8 +81,8 @@ function Details() {
             <Heading size="md">Customer Information</Heading>
             </Card.Header>
             <Card.Body color="fg.muted">
-                <Text>Email &nbsp;&nbsp;&nbsp;: <span style={{color: textColor, padding:"1vw", borderRadius: "1vw"}}>chauhanaryan381@gmail.com</span></Text>
-                <Text>Phone &nbsp;: <span style={{color: textColor, padding:"1vw", borderRadius: "1vw"}}>9094122622</span></Text>
+                <Text>Email &nbsp;&nbsp;&nbsp;: <span style={{color: textColor, padding:"1vw", borderRadius: "1vw"}}>{user?.email}</span></Text>
+                <Text>Phone &nbsp;: <span style={{color: textColor, padding:"1vw", borderRadius: "1vw"}}>{user?.phone}</span></Text>
             </Card.Body>
       </Card.Root>
       </Flex>

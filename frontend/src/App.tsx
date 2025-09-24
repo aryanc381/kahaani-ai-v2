@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
 import Signup from './pages/auth/signup'
 import Login from './pages/auth/login'
@@ -10,32 +10,45 @@ import Friends from './friends/friends'
 import Profile from './pages/profile/profile'
 import Ai from './pages/ai/ai'
 import Showcase from './pages/showcase/showcase'
-import { RecoilRoot } from 'recoil'
 
-function App() {
+import useUserStore from './store/userStore'
+
+
+
+function ProtectedRoutes() {
+  const user = useUserStore((state) => state.user);
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
 
   return (
-    <>
-    <>
-      <BrowserRouter>
-        <RecoilRoot>
-        <Routes>
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/city' element={<City />} />
-          <Route path='/monuments' element={<Monuments />} />
-          <Route path='/map' element={<Gmap />} />
-          <Route path='/friends' element={<Friends />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/ai' element={<Ai />} />
-          <Route path='/' element={<Showcase />} />
-        </Routes>
-        </RecoilRoot>
-      </BrowserRouter>
-    </>
-    </>
-  )
+    <Routes>
+      <Route path='/home' element={<Home />} />
+      <Route path='/city' element={<City />} />
+      <Route path='/monuments' element={<Monuments />} />
+      <Route path='/map' element={<Gmap />} />
+      <Route path='/friends' element={<Friends />} />
+      <Route path='/profile' element={<Profile />} />
+      <Route path='/ai' element={<Ai />} />
+      
+    </Routes>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+   
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/login' element={<Login />} />
+
+        <Route path='/*' element={<ProtectedRoutes />} />
+        <Route path='/' element={<Showcase />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App

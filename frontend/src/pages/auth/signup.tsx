@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Toaster, toaster } from "../../components/ui/toaster";
 import { useNavigate } from "react-router-dom";
+import { VscHome } from "react-icons/vsc";
 
 function Signup() {
     const [firstName, setFirstName] = useState('');
@@ -100,6 +101,7 @@ function Signup() {
             </Stack>
             </Card.Body>
             <Card.Footer justifyContent="flex-end">
+            <Button variant="outline" onClick={() => {navigate('/')}} width={"1vw"}><VscHome /></Button>
             <Button variant="outline" onClick={() => {navigate(-1)}}>Back</Button>
             <Button variant="outline" onClick={() => {navigate('/login')}}>Login</Button>
             <Button variant="solid" onClick={signUpHandler}>Sign Up</Button>

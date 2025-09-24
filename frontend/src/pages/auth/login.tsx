@@ -4,11 +4,15 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { toaster, Toaster } from "../../components/ui/toaster";
 
+import useUserStore from "../../store/userStore"; 
+import type { User } from '../../store/userStore';
+import { VscHome } from "react-icons/vsc";
 
 function Login() {
 
     const [mail, setMail] = useState('');
     const [password, setPassword] = useState('');
+    const setUser = useUserStore((state) => state.setUser);
 
     const navigate = useNavigate();
 
@@ -32,7 +36,15 @@ function Login() {
             let color = "";
             if(response.data.msg === "Login Successfull") {
                 color = "success"; 
-             
+                const userData: User = {
+                    firstName: response.data.firstName!,
+                    lastName: response.data.lastName!,
+                    email: response.data.email!,
+                    phone: response.data.phone!,
+                    pendingUsers: response.data.pendingUsers || [],
+                    acceptedUsers: response.data.acceptedUsers || [],
+                };
+                setUser(userData);
                 navigate('/home');
             } else {
                 color = "error";
@@ -76,9 +88,10 @@ function Login() {
             </Stack>
             </Card.Body>
             <Card.Footer justifyContent="flex-end">
+                <Button variant="outline" onClick={() => {navigate('/')}} width={"1vw"}><VscHome /></Button>
                 <Button variant="outline" onClick={() => {navigate(-1)}}>Back</Button>
-            <Button variant="outline" onClick={() => {navigate('/signUp')}}>Sign Up</Button>
-            <Button variant="solid" onClick={Loginhandler}>Log In</Button>
+                <Button variant="outline" onClick={() => {navigate('/signUp')}}>Sign Up</Button>
+                <Button variant="solid" onClick={Loginhandler}>Log In</Button>
             </Card.Footer>
             
         </Card.Root>
