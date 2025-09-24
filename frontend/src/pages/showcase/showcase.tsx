@@ -429,19 +429,19 @@ function Creators() {
     { 
       name: "Aryan Chauhan", 
       role: "Fullstack AI Developer", 
-      img: "./aryan.png", 
+      img: "./people/aryan.png", 
       link: "https://www.aryancodes.dev" 
     },
     { 
       name: "Aditya Yenpure", 
       role: "Research & Ops", 
-      img: "./yenpure.png", 
+      img: "./people/yenpure.png", 
       link: "https://www.linkedin.com/in/aditya-yenpure-5089832b1/?originalSubdomain=in" 
     },
     { 
       name: "Prof. Deepa Nath", 
       role: "Project Mentor", 
-      img: "./deepa.png", 
+      img: "./people/deepa.png", 
       link: "https://research.mitwpu.edu.in/researcher/deepa-nath" 
     },
     {

@@ -120,15 +120,15 @@ function Experiences() {
       <Text textStyle={{base: "4xl"}} mt={{base: "9vw"}} letterSpacing={{base: "-0.3vw"}} mb={{base: "1vw"}}>Today's Hits</Text>
       <Flex overflowX="auto" flexWrap="nowrap" mt={"1vw"} gap="0.5vw" ml={{base: "-2vw"}} css={{ "::-webkit-scrollbar": { display: "none" }, scrollbarWidth:"none", "-webkit-overflow-scrolling": "touch"}} >
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "2.5vw"}}>
-          <Image src="./Gradient5.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
+          <Image src="./gradient/Gradient5.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
           <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Music</Text>
         </Box>
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
-            <Image src="./Gradient6.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
+            <Image src="./gradient/Gradient6.png" width={{base: "40vw"}} borderRadius={{base: "10%"}}/>
             <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Theatre</Text>
         </Box>
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
-            <Image src="./Gradient (5).svg" width={{base: "40vw"}}/>
+            <Image src="./gradient/Gradient (5).svg" width={{base: "40vw"}}/>
             <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Workshops</Text>
         </Box>
       </Flex>
