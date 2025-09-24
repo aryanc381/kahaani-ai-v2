@@ -25,7 +25,7 @@ function FriendReq() {
   async function PendingHandler() {
     try {
       const response = await axios({
-        url: "http://192.168.1.61:3000/v1/api/root/friends/requests/incoming",
+        url: "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/friends/requests/incoming",
         method: "GET",
         params: {
           email: loggedInEmail,
@@ -42,7 +42,7 @@ function FriendReq() {
   async function AcceptHandler(fromEmail: string) {
     try {
       const response = await axios.post(
-        "http://192.168.1.61/v1/api/root/friends/search/accept",
+        "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/friends/search/accept",
         {
           from: fromEmail,
           to: loggedInEmail,
