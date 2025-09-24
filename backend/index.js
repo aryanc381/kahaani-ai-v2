@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
-import rootRouter from './routes/root.js';
+import rootRouter from '../routes/root.js';
+import serverless from "serverless-http";
 
 const app = express();
 
@@ -9,6 +10,4 @@ app.use(express.json());
 
 app.use('/v1/api', rootRouter);
 
-app.listen(3000, () => {
-    console.log("App is listening at PORT 3000");
-});
+export default serverless(app);

@@ -278,7 +278,7 @@ function Arc() {
   return(
     <Flex direction={"column"}>
       <Text fontWeight={{base: "300"}} textAlign={{base: "center"}} textStyle={{base: "3xl"}} mt={{base: "27vw"}} letterSpacing={{base: "-0.3vw"}} mb={{base: "5.5vw"}} >Project Timeline</Text>
-      <Flex mt={"-15vw"}>
+      <Flex mt={"-15vw"} mr={"5vw"} ml={"5vw"}>
         <ArcTimeline data={data} />
       </Flex>
         
@@ -447,7 +447,7 @@ function Creators() {
     {
       name: "Vaishvi Patel",
       role: "AI Voice Specialist",
-      img: "./vaishvi.png",
+      img: "./people/vaishvi.png",
       link: "https://www.linkedin.com/in/vaishvi-patel-36119b328/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     }
   ];

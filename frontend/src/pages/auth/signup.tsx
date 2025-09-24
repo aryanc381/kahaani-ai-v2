@@ -108,7 +108,8 @@ function Signup() {
             </Stack>
             </Card.Body>
             <Card.Footer justifyContent="flex-end">
-            <Button variant="outline" onClick={clearHandler}>Clear</Button>
+            <Button variant="outline" onClick={() => {navigate(-1)}}>Back</Button>
+            
             <Button variant="outline" onClick={() => {navigate('/login')}}>Login</Button>
             <Button variant="solid" onClick={signUpHandler}>Sign Up</Button>
             </Card.Footer>
