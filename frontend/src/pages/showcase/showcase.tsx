@@ -541,7 +541,7 @@ function Footer() {
               </Button>
               <Button variant={"subtle"} borderRadius={"4vw"} textAlign={"center"} mt={"2vw"} onClick={() => {navigate('/signup')}}>Signup</Button>
               <Button variant={"subtle"} borderRadius={"4vw"} textAlign={"center"} mt={"2vw"} onClick={() => {navigate('/login')}}>Login</Button>
-              <Button variant={"subtle"} borderRadius={"4vw"} textAlign={"center"} mt={"2vw"} onClick={() => {navigate('/home')}}>Demo</Button>
+              <Button variant={"subtle"} borderRadius={"4vw"} textAlign={"center"} mt={"2vw"} onClick={() => {navigate('/home')}}>App</Button>
             </Flex>
           
           </Flex>
