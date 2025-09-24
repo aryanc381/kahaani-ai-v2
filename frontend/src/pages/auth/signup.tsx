@@ -12,14 +12,6 @@ function Signup() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    async function clearHandler() {
-        setFirstName('');
-        setLastName('');
-        setMail('');
-        setPhone('');
-        setPassword('');
-    }
-
     async function signUpHandler() {
         const toastId = toaster.create({
             description: "Attempting signup, please wait...",
