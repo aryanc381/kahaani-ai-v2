@@ -7,8 +7,6 @@ import { VscArrowLeft, VscBroadcast, VscSettingsGear, VscVr } from 'react-icons/
 import { useColorMode, useColorModeValue } from '../../components/ui/color-mode'
 import { useNavigate } from 'react-router-dom'
 import { CustomerInfo } from '../home/home'
-import { userInfo } from '@/store/atoms'
-
 
 function Profile() {
   return (
