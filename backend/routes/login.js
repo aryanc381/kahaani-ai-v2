@@ -40,7 +40,6 @@ router.post('/userLogin', async (req, res) => {
                 firstName: existingUser.firstName,
                 lastName: existingUser.lastName,
                 email: req.body.email,
-                phone: phone
             })
         }
     } catch(err) {
