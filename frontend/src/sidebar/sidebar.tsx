@@ -45,13 +45,13 @@ function Sidebar() {
     </Flex>
     <Flex direction="column" alignItems="center" width="12vw"  onClick={() => {navigate('/map')}}>
       <VscLocation size="7.3vw" />
-      <Text>Map</Text>
+      <Text>Diary</Text>
     </Flex>
     <Flex direction="column" justifyContent="center" width="12vw" alignItems="center" mr="2vw"  onClick={() => {navigate('/ai')}}>
       <Flex ml="1.5vw">
         <VscChip size="7vw" />
       </Flex>
-      <Text>SpeakAI</Text>
+      <Text>Discover</Text>
     </Flex>
     <Flex direction="column" alignItems="center" width="12vw" mr={"2vw"}  onClick={() => {navigate('/profile'); <style></style>}}>
       <VscAccount size="7vw" />

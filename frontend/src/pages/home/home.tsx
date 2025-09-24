@@ -2,8 +2,9 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import Navbar from "../../navbar/navbar";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../sidebar/sidebar";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
+import useUserStore from "@/store/userStore";
 
 
 
@@ -25,7 +26,10 @@ function Home() {
 
 export function CustomerInfo() {
   const [friendCount, setFriendCount] = useState(0);
-    useEffect(() => {
+  const [monCount, setMonCount] = useState(0);
+  const [city, cityCount] = useState(0);
+
+    useMemo(() => {
       async function fetchFriends() {
         try {
           const response = await axios({
@@ -42,7 +46,7 @@ export function CustomerInfo() {
         }
       }
       fetchFriends();
-    }, [])
+    }, []);
   return(
     <Flex justifyContent={"center"} gap={{base: "9vw"}} mt={{base: "7vw"}}>
       <Flex direction={"column"} textAlign={"center"} width={{base: "25vw"}}>

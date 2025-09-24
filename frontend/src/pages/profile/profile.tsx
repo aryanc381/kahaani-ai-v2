@@ -48,8 +48,7 @@ function Information() {
             w={{ base: "15vw", md: "100px" }}
             h={{ base: "15vw", md: "100px" }}
           >
-            <Avatar.Fallback name="Aryan" />
-            <Avatar.Image src="./pfp.jpg" />
+            <Avatar.Fallback name={`${user?.firstName} ${user?.lastName}`} />
           </Avatar.Root>
           <Box>
             <Flex>
@@ -150,7 +149,7 @@ function MyTrips() {
                           <Flex direction="column" gap={6} align="center">
                             {/* Tour Image */}
                             <Box position="relative" width="80%" borderRadius="2xl" overflow="hidden" boxShadow="md">
-                              <Image src={`./${selectedCity}.png`} alt={CityMenus[selectedCity][0]} width="100%" />
+                              <Image src={`./city/${selectedCity}.png`} alt={CityMenus[selectedCity][0]} width="100%" />
                               <Text
                                 position="absolute"
                                 top="50%"
@@ -245,7 +244,7 @@ function MyTrips() {
                       onClick={() => handleCityClick(city)}
                       cursor="pointer"
                     >
-                      <Image src={`./${city}.png`} width="30vw" borderRadius="10%" />
+                      <Image src={`./city/${city}.png`} width="30vw" borderRadius="10%" />
                       <Text
                         position="absolute"
                         top="50%"
