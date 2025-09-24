@@ -70,19 +70,19 @@ function Tours() {
       <Text textStyle={{base: "4xl"}} mt={{base: "9vw"}} letterSpacing={{base: "-0.3vw"}} mb={{base: "1vw"}} >AI Tours</Text>
       <Flex mt={"1vw"} overflowX="auto" flexWrap="nowrap" gap="0.5vw" css={{ "::-webkit-scrollbar": { display: "none" }, scrollbarWidth:"none", "-webkit-overflow-scrolling": "touch"}} >
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "0vw"}}>
-          <Image src="./Gradient (1).svg" width={{base: "40vw"}} borderRadius={{base: "12%"}} onClick={() => {navigate('/city')}}/>
+          <Image src="./gradient/Gradient (1).svg" width={{base: "40vw"}} borderRadius={{base: "12%"}} onClick={() => {navigate('/city')}}/>
           <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">City</Text>
         </Box>
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
-            <Image src="./museums.svg" width={{base: "40vw"}} borderRadius={{base: "12%"}} onClick={() => {navigate('/monuments')}}/>
+            <Image src="./gradient/museums.svg" width={{base: "40vw"}} borderRadius={{base: "12%"}} onClick={() => {navigate('/monuments')}}/>
             <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Monuments</Text>
         </Box>
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
-            <Image src="./Gradient3.png" width={{base: "40vw"}} borderRadius={{base: "12%"}} />
+            <Image src="./gradient/Gradient3.png" width={{base: "40vw"}} borderRadius={{base: "12%"}} />
             <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Museums</Text>
         </Box>
         <Box position={{base: "relative"}} flex={{base: "0 0 auto"}} ml={{base: "3vw"}}>
-            <Image src="./budget.png" width={{base: "40vw"}} borderRadius={{base: "12%"}}/>
+            <Image src="./gradient/budget.png" width={{base: "40vw"}} borderRadius={{base: "12%"}}/>
             <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="#fff" textStyle="2xl">Budget</Text>
         </Box>
         
