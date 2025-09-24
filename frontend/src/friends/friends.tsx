@@ -4,6 +4,7 @@ import Sidebar from "../sidebar/sidebar"
 import { Avatar, AvatarGroup, Button, Table, Card, CloseButton, Dialog, Flex, Group, Heading, Input, Portal, Stack, Text } from "@chakra-ui/react"
 import { Toaster, toaster } from "@/components/ui/toaster"
 import axios from "axios"
+import useUserStore from "@/store/userStore"
 
 function Friends() {
   return (
@@ -19,8 +20,7 @@ function Friends() {
 function FriendReq() {
   const [open, setOpen] = useState(false);
   const [pending, setPending] = useState<string[]>([]);
-
-  const loggedInEmail = "aditya@gmail.com";
+  const user = useUserStore((state) => state.user);
 
   async function PendingHandler() {
     try {
@@ -28,7 +28,7 @@ function FriendReq() {
         url: "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/friends/requests/incoming",
         method: "GET",
         params: {
-          email: loggedInEmail,
+          email: user?.email,
         },
       });
 
@@ -45,7 +45,7 @@ function FriendReq() {
         "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/friends/search/accept",
         {
           from: fromEmail,
-          to: loggedInEmail,
+          to: user?.email,
         }
       );
       alert(response.data.msg);
@@ -179,6 +179,7 @@ function Search() {
   const [mail, setMail] = useState('');
   const [open, setOpen] = useState(false);
   const [users, setUsers] = useState<User[]>([]);
+  const user = useUserStore((state) => state.user);
 
   async function SearchHandler() {
     const toastId = toaster.create({
@@ -229,7 +230,7 @@ function Search() {
       const response = await axios.post(
         "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/friends/search/request",
         {
-          from: "aditya@gmail.com", //  replacing later with logged-in user email
+          from: user?.email, //  replacing later with logged-in user email
           to: to,
         }
       );

@@ -28,7 +28,7 @@ export function CustomerInfo() {
   const [friendCount, setFriendCount] = useState(0);
   const [monCount, setMonCount] = useState(0);
   const [city, cityCount] = useState(0);
-
+  const user = useUserStore((state) => state.user);
     useMemo(() => {
       async function fetchFriends() {
         try {
@@ -36,7 +36,7 @@ export function CustomerInfo() {
             method: "GET",
             url: "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/friends/count",
             params: {
-              email: "aditya@gmail.com"
+              email: user?.email
             }
           });
 

@@ -33,21 +33,16 @@ const kahUsers = mongoose.Schema({
     pfp: {
         type: String
     },
-    count: {
-        friendsCount: {
-            type: Number
-        },
-        discoveriesCount: {
-            type: Number
-        },
-        citiesCount: {
-            type: Number
-        },
-    },
     pendingUsers: [{
         type: String
     }],
     acceptedUsers: [{
+        type: String
+    }],
+    monuments: [{
+        type: String
+    }],
+    city: [{
         type: String
     }]
 
