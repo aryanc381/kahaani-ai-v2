@@ -189,7 +189,7 @@ function Search() {
 
     try {
       const response = await axios({
-        url: "http://192.168.1.61:3000/v1/api/root/friends/search?email=" + mail,
+        url: "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/friends/search?email=" + mail,
         method: "GET",
       });
 
@@ -227,7 +227,7 @@ function Search() {
 
     try {
       const response = await axios.post(
-        "http://192.168.1.61:3000/v1/api/root/friends/search/request",
+        "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/friends/search/request",
         {
           from: "aditya@gmail.com", //  replacing later with logged-in user email
           to: to,
