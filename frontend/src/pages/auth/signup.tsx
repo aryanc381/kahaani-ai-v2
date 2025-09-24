@@ -28,7 +28,7 @@ function Signup() {
         });
         try {
             const response = await axios({
-                url: "https://overgross-jeannette-manatoid.ngrok-free.app/v1/api/root/userSignup",
+                url: "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/userSignup",
                 method: "POST",
                 data: {
                     firstName: firstName || '',
@@ -109,7 +109,6 @@ function Signup() {
             </Card.Body>
             <Card.Footer justifyContent="flex-end">
             <Button variant="outline" onClick={() => {navigate(-1)}}>Back</Button>
-            
             <Button variant="outline" onClick={() => {navigate('/login')}}>Login</Button>
             <Button variant="solid" onClick={signUpHandler}>Sign Up</Button>
             </Card.Footer>

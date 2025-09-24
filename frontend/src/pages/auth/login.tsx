@@ -20,7 +20,7 @@ function Login() {
         });
         try {
             const response = await axios({
-                url: "https://overgross-jeannette-manatoid.ngrok-free.app/v1/api/root/userLogin",
+                url: "https://kahaani-ai-v2-8wex.vercel.app/v1/api/root/userLogin",
                 method: "POST",
                 data: {
                     email: mail,
