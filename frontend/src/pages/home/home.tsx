@@ -26,8 +26,7 @@ function Home() {
 
 export function CustomerInfo() {
   const [friendCount, setFriendCount] = useState(0);
-  const [monCount, setMonCount] = useState(0);
-  const [city, cityCount] = useState(0);
+ 
   const user = useUserStore((state) => state.user);
     useMemo(() => {
       async function fetchFriends() {
