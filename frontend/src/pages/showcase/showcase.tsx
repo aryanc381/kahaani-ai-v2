@@ -41,7 +41,7 @@ function Showcase() {
 
 function Navbar() {
   const { toggleColorMode } = useColorMode();
-  const overlayColor = useColorModeValue("rgba(255, 255, 255, 1)", "rgba(0, 0, 0, 1)");
+  const overlayColor = useColorModeValue("rgba(255, 255, 255, 1)", "#0c0a09");
   const navigate = useNavigate();
   return (
     <Flex>
