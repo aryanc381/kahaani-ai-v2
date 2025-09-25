@@ -2,7 +2,7 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import Navbar from "../../navbar/navbar";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../sidebar/sidebar";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import axios from "axios";
 import useUserStore from "@/store/userStore";
 
