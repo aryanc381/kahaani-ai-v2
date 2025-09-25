@@ -239,7 +239,7 @@ function NorthIndia() {
       const city: any = selectedCity;
       const response = await axios({
         method: "POST",
-        url: "http://localhost:3000/v1/api/root/create-checkout-session",
+        url: "https://www.kahaani.site/v1/api/root/create-checkout-session",
         data: {
           "product": {
               "name": CityMenus[city][0],
