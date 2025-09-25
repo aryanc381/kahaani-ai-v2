@@ -17,7 +17,7 @@ const signUpBody = zod.object({
     password: zod.string().min(6, "Password must be atleast 6 characters long.") 
 });
 
-router.post('/userSignUp', async (req, res) => {
+router.post('/userSignup', async (req, res) => {
     const parsed = signUpBody.safeParse(req.body);
 
     if(!parsed.success) {
