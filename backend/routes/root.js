@@ -7,6 +7,7 @@ import paymentRouter from './payment.js';
 const router = express.Router();
 router.use(express.json());
 
+// routes
 router.use('/root', signRouter);
 router.use('/root', logRouter);
 router.use('/root', friendsRouter);
