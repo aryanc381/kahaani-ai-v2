@@ -50,7 +50,7 @@ function Maharashtra() {
       "Pune City Tour",
       "Embark on the ultimate Pune City Tour not just a journey through streets, but through time, culture, and emotion. From the majestic Shaniwar Wada echoing the valor of the Marathas, to the lively bustle of the old Peths, every step will immerse you in history, heritage.",
       ["Shaniwar Wada", "Peth Roads", "Koregaon Park", "Shaniwar Wada", "Peth Roads", "Koregaon Park"],
-      "Rs. 500",
+      500,
       "24hrs"
     ],
     "nagpur": [
@@ -612,7 +612,6 @@ function SouthIndia() {
                       </Card.Body>
                     </Card.Root>
 
-                
                     <Card.Root width="100%" borderRadius="xl" boxShadow="sm">
                       <Card.Body>
                         <Flex justify="space-between" align="center">
