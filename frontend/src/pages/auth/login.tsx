@@ -83,7 +83,7 @@ function Login() {
 
                 <Field.Root>
                 <Field.Label>Password</Field.Label>
-                <Input placeholder="ex. password@123" value={password} onChange={(e) => {setPassword(e.target.value)}}/>
+                <Input type="password" placeholder="ex. password@123" value={password} onChange={(e) => {setPassword(e.target.value)}}/>
                 </Field.Root>
             </Stack>
             </Card.Body>

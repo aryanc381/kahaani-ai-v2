@@ -15,12 +15,11 @@ import {
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { useState } from 'react';
 
-
-
  
 function Showcase() {
   return (
     <Flex>
+      <Flex>
    
       <Flex direction={"column"}>
           <Navbar />
@@ -32,6 +31,7 @@ function Showcase() {
           <PixelScroll />
           <Creators />
           <Footer />
+        </Flex>
       </Flex>
     </Flex>
   )

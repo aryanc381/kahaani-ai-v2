@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import rootRouter from './routes/root.js';
-import serverless from "serverless-http";
 
 const app = express();
 

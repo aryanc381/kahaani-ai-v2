@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react"
 import { useState } from 'react'
 import Sidebar from '../../sidebar/sidebar'
+import axios from 'axios'
 
 function City() {
   return (
@@ -32,6 +33,8 @@ function CityDescription() {
     )
 }
 function Maharashtra() {
+
+
   const [open, setOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
 
@@ -40,7 +43,7 @@ function Maharashtra() {
       "Mumbai City Tour",
       "Experience the spirit of Mumbai and if I were a rich man, yada yada yada ",
       ["Gateway of India", "Marine Drive", "Colaba Causeway"],
-      "Rs. 700",
+      700,
       "12hrs"
     ],
     "pune": [
@@ -71,6 +74,26 @@ function Maharashtra() {
       "Rs. 800",
       "2 Days"
     ]
+  }
+
+  async function handleCheckout() {
+    try {
+      const city: any = selectedCity;
+      const response = await axios({
+        method: "POST",
+        url: "http://localhost:3000/v1/api/root/create-checkout-session",
+        data: {
+          "product": {
+              "name": CityMenus[city][0],
+              "image": `https://www.kahaani.site/city/${city}.png`,
+              "price": CityMenus[city][3]
+          }
+        }
+      });
+      window.location.href = response.data.url;
+    } catch(err) {
+      console.error(err);
+    }
   }
 
   const handleCityClick = (city: string) => {
@@ -157,7 +180,7 @@ function Maharashtra() {
               <Drawer.Footer justifyContent="space-between" ml={"-2vw"}>
                 <Button variant="outline" onClick={() => setOpen(false)}>Close</Button>
                 <Flex gap={2}>
-                  <Button colorScheme="blue"><a href="https://elevenlabs.io/app/talk-to?agent_id=agent_7801k569312hfzcb6gtdx8a9a0nq">Purchase Tour</a></Button>
+                  <Button colorScheme="blue" onClick={handleCheckout}>Purchase Tour</Button>
                 </Flex>
               </Drawer.Footer>
 
@@ -208,8 +231,28 @@ function Maharashtra() {
 
 
 function NorthIndia() {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
+
+  async function handleCheckout() {
+    try {
+      const city: any = selectedCity;
+      const response = await axios({
+        method: "POST",
+        url: "http://localhost:3000/v1/api/root/create-checkout-session",
+        data: {
+          "product": {
+              "name": CityMenus[city][0],
+              "image": `https://www.kahaani.site/city/${city}.png`,
+              "price": CityMenus[city][3]
+          }
+        }
+      });
+      window.location.href = response.data.url;
+    } catch(err) {
+      console.error(err);
+    }
+  }
 
   const CityMenus: Record<string, any[]> = {
   "jaipur": [
@@ -365,7 +408,7 @@ function NorthIndia() {
                 <Button variant="outline" onClick={() => setOpen(false)}>Close</Button>
                 <Flex gap={2}>
         
-                  <Button colorScheme="blue"><a href="https://elevenlabs.io/app/talk-to?agent_id=agent_7801k569312hfzcb6gtdx8a9a0nq">Purchase Tour</a></Button>
+                  <Button colorScheme="blue" onClick={handleCheckout}>Purchase Tour</Button>
                 </Flex>
               </Drawer.Footer>
 
@@ -417,6 +460,26 @@ function NorthIndia() {
 function SouthIndia() {
     const [open, setOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
+
+  async function handleCheckout() {
+    try {
+      const city: any = selectedCity;
+      const response = await axios({
+        method: "POST",
+        url: "http://localhost:3000/v1/api/root/create-checkout-session",
+        data: {
+          "product": {
+              "name": CityMenus[city][0],
+              "image": `https://www.kahaani.site/city/${city}.png`,
+              "price": CityMenus[city][3]
+          }
+        }
+      });
+      window.location.href = response.data.url;
+    } catch(err) {
+      console.error(err);
+    }
+  }
 
   const CityMenus: Record<string, any[]> = {
   "mysore": [
@@ -572,7 +635,7 @@ function SouthIndia() {
               <Drawer.Footer justifyContent="space-between" ml={"-2vw"}>
                 <Button variant="outline" onClick={() => setOpen(false)}>Close</Button>
                 <Flex gap={2}> 
-                  <Button colorScheme="blue"><a href="https://elevenlabs.io/app/talk-to?agent_id=agent_7801k569312hfzcb6gtdx8a9a0nq">Purchase Tour</a></Button>
+                  <Button colorScheme="blue" onClick={handleCheckout}>Purchase Tour</Button>
                 </Flex>
               </Drawer.Footer>
 
