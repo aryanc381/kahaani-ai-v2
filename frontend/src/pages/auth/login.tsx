@@ -8,7 +8,7 @@ import useUserStore from "../../store/userStore";
 import type { User } from '../../store/userStore';
 import { VscHome } from "react-icons/vsc";
 
-
+// fixed bugs you'll never kno hahaha
 
 function Login() {
 
