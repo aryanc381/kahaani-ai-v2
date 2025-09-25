@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
-mongoose.connect('mongodb+srv://venomc381:Venom%4054321@cluster0.yfrink8.mongodb.net/');
+import dotenv from 'dotenv';
+dotenv.config();
+
+mongoose.connect(process.env.MONGODB);
 
 const kahUsers = mongoose.Schema({
     firstName: {
@@ -44,7 +47,10 @@ const kahUsers = mongoose.Schema({
     }],
     city: [{
         type: String
-    }]
+    }],
+    accessToken: {
+        type: String
+    }
 
 }); 
 

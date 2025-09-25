@@ -8,6 +8,7 @@ import useUserStore from "../../store/userStore";
 import type { User } from '../../store/userStore';
 import { VscHome } from "react-icons/vsc";
 
+
 function Login() {
 
     const [mail, setMail] = useState('');
@@ -43,6 +44,7 @@ function Login() {
                     phone: response.data.phone!,
                     pendingUsers: response.data.pendingUsers || [],
                     acceptedUsers: response.data.acceptedUsers || [],
+                    accessToken: response.data.accessToken
                 };
                 setUser(userData);
                 navigate('/home');

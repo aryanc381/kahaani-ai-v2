@@ -26,6 +26,8 @@
     "cobe": "^0.6.5",
     "framer-motion": "^12.23.16",
     "gsap": "^3.13.0",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "leaflet": "^1.9.4",
     "locomotive-scroll": "^4.1.4",
     "lucide-react": "^0.544.0",

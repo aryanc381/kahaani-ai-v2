@@ -1,6 +1,8 @@
 import express from 'express';
 import zod from 'zod';
 import users from '../db.js';
+import jwt  from 'jsonwebtoken';
+
 
 const router = express.Router();
 router.use(express.json());
@@ -29,17 +31,23 @@ router.post('/userLogin', async (req, res) => {
                 password: req.body.password
             });
 
+            
+
             if(!existingUser) {
                 return res.status(200).json({
                     msg: "Incorrect Email / Password"
                 });
             }
+            const token = jwt.sign({ email: existingUser.email }, process.env.JWT_SECRET, {expiresIn: '2d'});
+            existingUser.accessToken = token;
+            await existingUser.save();
 
             return res.status(200).json({
                 msg: "Login Successfull",
                 firstName: existingUser.firstName,
                 lastName: existingUser.lastName,
                 email: req.body.email,
+                accessToken: existingUser.accessToken
             })
         }
     } catch(err) {

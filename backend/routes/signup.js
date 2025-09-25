@@ -1,6 +1,10 @@
 import express from 'express';
 import zod from 'zod';
 import users from '../db.js';
+import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
+
+dotenv.config();
 
 const router = express.Router();
 router.use(express.json());
@@ -36,13 +40,14 @@ router.post('/userSignUp', async (req, res) => {
                 msg: "User already exists with email: " + req.body.email
             });
         }
-
+        const token = jwt.sign({email: req.body.email}, process.env.JWT_SECRET, { expiresIn: '2d' })
         const user = await users.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
             phone: req.body.phone,
-            password: req.body.password
+            password: req.body.password,
+            accessToken: token
         });
         
         return res.status(200).json({
@@ -51,7 +56,8 @@ router.post('/userSignUp', async (req, res) => {
             lastName: user.lastName,
             email: user.email,
             phone: user.phone,
-            password: user.password
+            password: user.password,
+            accessToken: token
         });
     }
 });
