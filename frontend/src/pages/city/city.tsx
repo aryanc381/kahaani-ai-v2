@@ -57,21 +57,21 @@ function Maharashtra() {
       "Nagpur Tour",
       "Explore the city of oranges",
       ["Deekshabhoomi", "Sitabuldi Fort", "Ambazari Lake"],
-      "Rs. 600",
+      600,
       "10hrs"
     ],
     "nashik": [
       "Nashik Tour",
       "City of grapes and temples",
       ["Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves", "Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves", "Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves", "Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves", "Trimbakeshwar Temple", "Sula Vineyards", "Pandavleni Caves"],
-      "Rs. 550",
+      550,
       "8hrs"
     ],
     "aurangabad": [
       "Aurangabad Tour",
       "Historic city of Maharashtra",
       ["Ajanta Caves", "Ellora Caves", "Bibi ka Maqbara"],
-      "Rs. 800",
+      800,
       "2 Days"
     ]
   }
@@ -163,7 +163,7 @@ function Maharashtra() {
                         <Flex justify="space-between" align="center">
                           <Box>
                             <Text fontSize="sm" color="chakra-subtle-text">Price</Text>
-                            <Text fontSize="lg" fontWeight="semibold">{CityMenus[selectedCity][3]}</Text>
+                            <Text fontSize="lg" fontWeight="semibold">Rs. {CityMenus[selectedCity][3]}</Text>
                           </Box>
                           <Box>
                             <Text fontSize="sm" color="chakra-subtle-text">Duration</Text>
@@ -268,7 +268,7 @@ function NorthIndia() {
       "Bapu Bazaar",
       "Johari Bazaar"
     ],
-    "Rs. 900",
+    900,
     "12hrs"
   ],
 
@@ -284,7 +284,7 @@ function NorthIndia() {
       "Toorji Ka Jhalra (Stepwell)",
       "Rao Jodha Desert Rock Park"
     ],
-    "Rs. 800",
+    800,
     "10hrs"
   ],
 
@@ -301,7 +301,7 @@ function NorthIndia() {
       "Jagdish Temple",
       "Vintage Car Museum"
     ],
-    "Rs. 1000",
+    1000,
     "14hrs"
   ],
 
@@ -318,7 +318,7 @@ function NorthIndia() {
       "Jain Temples",
       "Nathmal Ki Haveli"
     ],
-    "Rs. 1000",
+    1000,
     "2 Days"
   ]
 };
@@ -390,7 +390,7 @@ function NorthIndia() {
                         <Flex justify="space-between" align="center">
                           <Box>
                             <Text fontSize="sm" color="chakra-subtle-text">Price</Text>
-                            <Text fontSize="lg" fontWeight="semibold">{CityMenus[selectedCity][3]}</Text>
+                            <Text fontSize="lg" fontWeight="semibold">Rs. {CityMenus[selectedCity][3]}</Text>
                           </Box>
                           <Box>
                             <Text fontSize="sm" color="chakra-subtle-text">Duration</Text>
@@ -495,7 +495,7 @@ function SouthIndia() {
       "Jaganmohan Palace",
       "Karanji Lake"
     ],
-    "Rs. 700",
+    700,
     "12hrs"
   ],
 
@@ -512,7 +512,7 @@ function SouthIndia() {
       "Chapora Fort",
       "Dudhsagar Waterfalls"
     ],
-    "Rs. 1200",
+    1200,
     "1 Day"
   ],
 
@@ -529,7 +529,7 @@ function SouthIndia() {
       "Commercial Street",
       "UB City Mall"
     ],
-    "Rs. 800",
+    800,
     "10hrs"
   ],
 
@@ -546,7 +546,7 @@ function SouthIndia() {
       "Kodachadri Hills",
       "Shettihalli Church Ruins"
     ],
-    "Rs. 900",
+    900,
     "2 Days"
   ]
 };
@@ -617,7 +617,7 @@ function SouthIndia() {
                         <Flex justify="space-between" align="center">
                           <Box>
                             <Text fontSize="sm" color="chakra-subtle-text">Price</Text>
-                            <Text fontSize="lg" fontWeight="semibold">{CityMenus[selectedCity][3]}</Text>
+                            <Text fontSize="lg" fontWeight="semibold">Rs. {CityMenus[selectedCity][3]}</Text>
                           </Box>
                           <Box>
                             <Text fontSize="sm" color="chakra-subtle-text">Duration</Text>
