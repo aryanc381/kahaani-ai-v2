@@ -8,6 +8,7 @@ dotenv.config();
 
 const router = express.Router();
 router.use(express.json());
+// fixed bugs you'll never know
 
 const signUpBody = zod.object({
     firstName: zod.string().min(3, "Please enter correct firstname."),
