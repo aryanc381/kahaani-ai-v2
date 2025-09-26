@@ -1,4 +1,4 @@
-import { Box, Button, Card, Flex, Heading, Image, Kbd, Status, Text } from '@chakra-ui/react';
+import { Box, Button, Card, Flex, Heading, Image, Kbd, Link, Status, Text, useMediaQuery } from '@chakra-ui/react';
 import { useColorMode, useColorModeValue } from '@/components/ui/color-mode';
 import { VscAccount, VscActivateBreakpoints, VscArchive, VscLocation, VscPlayCircle, VscSettingsGear, VscTelescope, VscVr } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
@@ -17,10 +17,15 @@ import { useState } from 'react';
 
  
 function Showcase() {
+  const [isMobile] = useMediaQuery(["(max-width: 800px)"]);
+
+  if(!isMobile) {
+    return <Laptop />
+  }
+
   return (
     <Flex>
       <Flex>
-   
       <Flex direction={"column"}>
           <Navbar />
           <Header />
@@ -32,6 +37,21 @@ function Showcase() {
           <Creators />
           <Footer />
         </Flex>
+      </Flex>
+    </Flex>
+  )
+}
+
+function Laptop() {
+  const navigate = useNavigate();
+  return(
+    <Flex direction={"column"} height={"100%"} width={"100%"} alignItems={"center"} mt={"5vw"}>
+      <Image src='./imageK2.png' width={"15vw"} />
+      <Text fontWeight={"400"} fontSize={"4vw"} mt={"-0.5vw"} >KahaaniAI Platform</Text>
+      <Text>Designed and optimized for seamless use on iOS and Android smartphones.</Text>
+      <Flex mt={"1vw"} gap={"0.5vw"}>
+        <Button variant={"subtle"} fontWeight={"100"} borderRadius={"1vw"} letterSpacing={"0vw"} onClick={() => {navigate(-1)}}>Go back</Button>
+        <Button variant={"subtle"} fontWeight={"100"} borderRadius={"1vw"} letterSpacing={"0vw"}><Link href='https://aryancodes.dev'>Contact developer</Link></Button>
       </Flex>
     </Flex>
   )
