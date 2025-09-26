@@ -48,7 +48,8 @@ function Laptop() {
     <Flex direction={"column"} height={"100%"} width={"100%"} alignItems={"center"} mt={"5vw"}>
       <Image src='./imageK2.png' width={"15vw"} />
       <Text fontWeight={"400"} fontSize={"4vw"} mt={"-0.5vw"} >KahaaniAI Platform</Text>
-      <Text>Designed and optimized for seamless use on iOS and Android smartphones.</Text>
+      <Text>Optimized for iOS & Android. Access Live Web-App on mobile.</Text>
+      
       <Flex mt={"1vw"} gap={"0.5vw"}>
         <Button variant={"subtle"} fontWeight={"100"} borderRadius={"1vw"} letterSpacing={"0vw"} onClick={() => {navigate(-1)}}>Go back</Button>
         <Button variant={"subtle"} fontWeight={"100"} borderRadius={"1vw"} letterSpacing={"0vw"}><Link href='https://aryancodes.dev'>Contact developer</Link></Button>
