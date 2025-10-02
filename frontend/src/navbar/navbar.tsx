@@ -7,7 +7,7 @@ import { VscReactions } from "react-icons/vsc";
 
 
 function Navbar() {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
   return (
     <Flex flexDirection={"column"} mt={{base: "2vw"}} mr={{base: "5vw"}} ml={{base: "5vw"}}>
       <Flex justifyContent={"space-between"}>
