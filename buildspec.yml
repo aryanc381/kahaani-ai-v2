@@ -18,5 +18,3 @@ artifacts:
   files:
     - '**/*'
   discard-paths: no
-
-  
