@@ -2,16 +2,17 @@ version: 0.2
 
 phases: 
   install:
-  runtime-versions:
-    nodejs: 22
-  commands:
-    - echo Installing dependencies...
-    - cd frontend
-    - npm ci --legacy-peer-deps
+    runtime-versions:
+      nodejs: 22
+    commands:
+      - echo Installing dependencies...
+      - cd frontend
+      - npm ci --legacy-peer-deps
   
   build:
     commands:
       - echo Building the React app...
+      - cd frontend
       - npm run build
   
   artifacts:
