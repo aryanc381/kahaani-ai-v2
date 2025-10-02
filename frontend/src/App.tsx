@@ -16,7 +16,7 @@ import useUserStore from './store/userStore'
 
 
 function ProtectedRoutes() {
-  const user = useUserStore((state) => state.user)
+  const user = useUserStore((state) => state.user);
 
   if (!user) {
     return <Navigate to="/login" replace />;
