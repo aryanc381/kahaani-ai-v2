@@ -16,7 +16,7 @@ phases:
       - npm run build
   
 artifacts:
-  base-directory: frontend/dist
+  base-directory: dist
   files:
     - '**/*'
   discard-paths: no
