@@ -15,10 +15,10 @@ phases:
       - cd frontend
       - npm run build
   
-  artifacts:
-    files:
-      - '**/*'
-    base-directory: frontend/dist
-    discard-paths: no
+artifacts:
+  base-directory: frontend/dist
+  files:
+    - '**/*'
+  discard-paths: no
 
   
